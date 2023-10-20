@@ -6,6 +6,7 @@ const Navbar = () => {
   // const { colors, fonts, fontSizes } = theme;
   return (
     <nav>
+      <div className="navbarglobal">
       <ul>
         <li>
           <Link href="/home">
@@ -22,6 +23,7 @@ const Navbar = () => {
           <Link href="/credits">CRÉDITOS</Link>
         </li>
       </ul>
+      </div>
     </nav>
   );
 };

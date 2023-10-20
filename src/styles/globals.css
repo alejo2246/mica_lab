@@ -33,12 +33,47 @@ a {
   color: inherit;
 }
 
+/* Estilos para la barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinea los elementos de la lista horizontalmente */
+}
+
+li {
+  margin: 0 10px; /* Agrega margen entre los elementos de la lista según sea necesario */
+}
+
+/* Estilos para el logo y el texto */
+.navbarglobal img {
+  width: 53px;
+  height: 49px;
+}
+
+.navbarglobal .text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Aplica estilos adicionales según sea necesario */
+
+
 .animationContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  padding: 10px;
 }
+
+
 
 .circle-container {
   display: flex;
@@ -51,3 +86,124 @@ a {
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
 }
+
+
+
+@font-face {
+  font-family: 'Prive';
+  src: url('/public/Prive\ Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Eczar';
+  src: url('/public/Eczar-VariableFont_wght.ttf') format('woff2');
+}
+
+        /* Estilos para la página About */
+        .about-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 10%;
+        }
+
+        .about-title {
+          font-family: 'Prive';
+          font-size: 52px;
+          font-weight: 700;
+          line-height: 61px;
+          letter-spacing: 0em;
+          text-align: left;
+          margin-bottom: 5%;
+          color: #FF0200;
+          margin-left: 2%;
+        }
+
+        .about-columns {
+          display: flex;
+          justify-content: center;
+        }
+
+        .about-text {
+          flex: 1;
+          font-family: 'Eczar';
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 37px;
+          letter-spacing: 0em;
+          text-align: left;
+          padding: 0 3%;
+          max-height: 568px;
+          max-height: 100%;
+          margin-bottom: 10%;
+          max-width: 472px;
+          color: #000000;
+          
+        }
+
+        .about-image-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        .about-image {
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+
+        .about-content-container {
+          margin: 0 10%;
+          margin-bottom: 10px;
+        }
+
+        .text-and-image-container {
+          display: flex;
+          flex-direction: column;
+          max-width: 100%;
+          align-items: flex-start;
+        }
+
+
+
+        /* Estilos para la página Credits */
+        .credits-container {
+          margin-left: 8%;
+          margin-top: 3%;
+        }
+
+        .section-title {
+          font-weight: bold;
+          margin-bottom: 1%;
+          font-family: Prive;
+          font-size: 42px;
+          font-weight: 700;
+          line-height: 50px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #FF0200;
+        }
+        .section{
+          margin-bottom: 2%;
+        }
+        .credit1{
+          color:#FF0200;
+          font-family: Prive;
+          font-size: 31px;
+          font-weight: 700;
+          line-height: 36px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+
+        .credtuser{
+          font-family: Prive;
+          font-size: 31px;
+          font-weight: 700;
+          line-height: 36px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #552C3C;
+          max-width: 970px;
+        }
