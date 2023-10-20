@@ -10,7 +10,7 @@ const About = () => {
         <div className="about-container">
         <div className="text-and-image-container">
           <div className="about-title">
-            <h1>Sobre<br /> nuestro proyecto</h1>
+            <h1>Sobre<br /> El proyecto</h1>
           </div>
           
             <div className="about-columns">
@@ -23,8 +23,8 @@ const About = () => {
               </p>
 
               </div>
-              <div className="about-text">
-              <p style={{ paddingLeft: '0%' }}>
+              <div className="about-text" style={{marginLeft: '15%'}}>
+              <p>
 
                 Cuyo objetivo es la creación de un archivo de memoria-cartográfica de los territorios de El Salitre y la Hacienda Las Mercedes, ubicados en la localidad de Suba.<br /><br />
                 Una experiencia que conecta la relatoría propia de los cambios espaciales de los territorios de Suba, como testigo del asentamiento y permanencia de los herederos del antiguo resguardo Muysca de Suba.

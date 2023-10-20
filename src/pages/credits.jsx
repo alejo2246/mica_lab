@@ -40,7 +40,7 @@ const Credits = () => {
           </p>
         </div>
         <div className="section">
-          <h2 className="credit1">Pertenecientes a los clanes originarios:</h2>
+          <h2 className="credit1">Pertenecientes a los clanes<br /> originarios:</h2>
           <p className="credtuser">Mususu-Neuque, Nivia, Yopasa, Cabiativa, Chisaba y Caita</p>
         </div>
       </div>

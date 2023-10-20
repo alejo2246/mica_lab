@@ -34,31 +34,31 @@ a {
 }
 
 /* Estilos para la barra de navegación */
-nav {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
-ul {
+.navbar-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Alinea los elementos de la lista horizontalmente */
+  display: flex;
 }
 
-li {
+.navbar-item {
   margin: 0 10px; /* Agrega margen entre los elementos de la lista según sea necesario */
 }
 
 /* Estilos para el logo y el texto */
-.navbarglobal img {
+.navbar-logo img {
   width: 53px;
   height: 49px;
 }
 
-.navbarglobal .text {
+.navbar-logo .text {
   font-weight: bold;
   font-size: 18px;
 }
@@ -110,7 +110,7 @@ li {
 
         .about-title {
           font-family: 'Prive';
-          font-size: 52px;
+          font-size: 22px;
           font-weight: 700;
           line-height: 61px;
           letter-spacing: 0em;
@@ -162,7 +162,6 @@ li {
           display: flex;
           flex-direction: column;
           max-width: 100%;
-          align-items: flex-start;
         }
 
 
@@ -205,5 +204,5 @@ li {
           letter-spacing: 0em;
           text-align: left;
           color: #552C3C;
-          max-width: 970px;
+          max-width: 950px;
         }
