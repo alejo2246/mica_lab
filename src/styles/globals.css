@@ -33,46 +33,82 @@ a {
   color: inherit;
 }
 
-/* Estilos para la barra de navegación */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.navbar-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-item {
-  margin: 0 10px; /* Agrega margen entre los elementos de la lista según sea necesario */
-}
-
-/* Estilos para el logo y el texto */
-.navbar-logo img {
-  width: 53px;
-  height: 49px;
-}
-
-.navbar-logo .text {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Aplica estilos adicionales según sea necesario */
-
-
 .animationContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  font-family: 'Prive';
+  font-size: 20px;
+  color: red; 
+}
+
+.navbar-logo {
+  margin-right: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  margin-right: 10%;
+  font-size: 20px;
+}
+.navbar-item:hover {
+  color: red; 
+}
+.navbar-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: 'Prive';
+}
+
+.navbar-item {
+  margin-right: 60px;
+}
+.sub-menu {
+  display: none;
+  position: absolute;
+  background-color: #E5DFD8;
+  padding: 10px;
+  border-radius: 5%;
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sub-menu li {
+  list-style-type: none;
+  text-align: center; /* Centra horizontalmente el texto */
+}
+
+.sub-menu li a {
+  display: block;
+  text-decoration: none;
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+
+
+
+
+/* Añade estilos adicionales según tus preferencias */
 
 
 .circle-container {
@@ -168,7 +204,7 @@ a {
 
         /* Estilos para la página Credits */
         .credits-container {
-          margin-left: 8%;
+          margin-left: 11%;
           margin-top: 3%;
         }
 

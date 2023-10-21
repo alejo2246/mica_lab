@@ -6,25 +6,34 @@ const Navbar = () => {
   return (
     <nav>
       <div className="navbar-container">
-        <ul className="navbar-list">
-          <li className="navbar-item">
-            <Link href="/home">
-              <div className="navbar-logo">
-                <Image src="/icons/logo.svg" alt="Logo" width={53} height={49} />
-                <Typography text="MICA LAB" sx={"hola"} />
+        <div className="navbar-left">
+          <Link href="/home">
+            <div className="navbar-logo">
+              <Image src="/icons/logo.svg" alt="Logo" width={53} height={49} />
+            </div>
+          </Link>
+          <Typography text="MICA LAB" sx={"hola"} />
+        </div>
+        <div className="navbar-right">
+          <ul className="navbar-list">
+            <li className="navbar-item">
+              <div className="menu-item">
+                <Link href="/about">FUECHY</Link>
+                <ul class="sub-menu">
+                  <li><Link href="/sub-menu-item-1">UBASUCAC AGUENÉ</Link></li>
+                  <li><Link href="/sub-menu-item-2">CHICUBUN</Link></li>
+                  <li><Link href="/sub-menu-item-3">QUYCA</Link></li>
+                </ul>
               </div>
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link href="/about">FUECHY</Link>
-          </li>
-          <li className="navbar-item">
-            <Link href="/about">SOBRE EL PROYECTO</Link>
-          </li>
-          <li className="navbar-item">
-            <Link href="/credits">CRÉDITOS</Link>
-          </li>
-        </ul>
+            </li>
+            <li className="navbar-item">
+              <Link href="/about">SOBRE EL PROYECTO</Link>
+            </li>
+            <li className="navbar-item">
+              <Link href="/credits">CRÉDITOS</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

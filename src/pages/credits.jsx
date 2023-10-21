@@ -28,7 +28,8 @@ const Credits = () => {
         </div>
         <div className="section">
           <h2 className="credit1">Desarrollo web:</h2>
-          <p className="credtuser">Alejandro Padilla</p></div>
+          <p className="credtuser">Alejandro Padilla</p>
+          <p className="credtuser">Geronimo Bustos</p></div>
           <div className="section">
           <h2 className="credit1">Diseño sonoro:</h2>
           <p className="credtuser">Mariana Duque Ramírez</p>

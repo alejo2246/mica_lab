@@ -8,17 +8,20 @@ import RightCircle from "@/components/animation/RightCircle";
 import YellowCircle from "@/components/animation/YellowCircle";
 import TextImage from "@/components/animation/TextImage";
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const controls = useAnimation();
   const router = useRouter();
+  const [animationStarted, setAnimationStarted] = useState(false);
 
   const animate = async () => {
+    setAnimationStarted(true);
     await controls.start({ opacity: 1, scale: 1 });
   };
+
   useEffect(() => {
     const redirectionTimeout = setTimeout(() => {
       router.push('/home', undefined, { shallow: true });
@@ -34,12 +37,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+
       <main className={styles.animationContainer}>
         <motion.div
           initial={{ opacity: 1, scale: 1 }}
           animate={controls}
           onAnimationComplete={animate}
+          onClick={() => {
+            if (!animationStarted) {
+              animate();
+            }
+          }}
         >
           <div className="circle-container">
             <div className="circle">
