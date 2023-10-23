@@ -89,11 +89,12 @@ a {
   border-radius: 5%;
   color: #000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: -6.5%;
 }
 
 .sub-menu li {
   list-style-type: none;
-  text-align: center; /* Centra horizontalmente el texto */
+  text-align: center;
 }
 
 .sub-menu li a {
@@ -105,23 +106,86 @@ a {
   display: block;
 }
 
-
-
-
-/* Añade estilos adicionales según tus preferencias */
-
+.sub-menu li:hover {
+  color: red;
+}
 
 .circle-container {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+  justify-content: center;
+  align-items: center; 
 }
+
+.content-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  margin-top: 5%;
+  color: red;
+  font-family: Prive;
+  font-size: 25px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.responsive-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 1220px; 
+  height: 1510px; 
+  margin-bottom: 5%;
+}
+
+.chicubun-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.chicubun-title {
+  font-size: 70px;
+  color: red;
+  margin-bottom: 2%;
+  font-family: Prive;
+}
+
+
+.chicubun-subtitle {
+  font-size: 18px;
+  font-family: prive;
+  max-width: 925px;
+  margin-bottom: 3%;
+}
+
+
+.chicubun-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+
+.chicubun-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 1085px;
+  height: auto;
+}
+
 
 
 
@@ -142,6 +206,7 @@ a {
           align-items: center;
           text-align: center;
           margin-bottom: 10%;
+          margin-top:8%;
         }
 
         .about-title {

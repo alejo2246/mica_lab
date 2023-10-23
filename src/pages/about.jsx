@@ -23,7 +23,7 @@ const About = () => {
               </p>
 
               </div>
-              <div className="about-text" style={{marginLeft: '15%'}}>
+              <div className="about-text" style={{marginLeft: '15%', maxWidth: '472px'}}>
               <p>
 
                 Cuyo objetivo es la creación de un archivo de memoria-cartográfica de los territorios de El Salitre y la Hacienda Las Mercedes, ubicados en la localidad de Suba.<br /><br />
