@@ -11,7 +11,7 @@ export default function Document() {
             justifyContent: "center",
           }}
         >
-          <div style={{ maxWidth: "1232px" }}>
+          <div style={{ maxWidth: "1232px", width: "100%" }}>
             <Main />
           </div>
         </div>
