@@ -18,7 +18,7 @@ const Navbar = () => {
           <ul className="navbar-list">
             <li className="navbar-item">
               <div className="menu-item">
-                <Link href="/about">FUECHY</Link>
+                <Link href="/ubasucac" style={{color:'red'}}>FUECHY <img src="/flecha.svg" alt="Descripción del SVG" width="16" height="16" /></Link>
                 <ul class="sub-menu">
                   <li><Link href="/aguene">UBASUCAC AGUENÉ</Link></li>
                   <li><Link href="/chicubun">CHICUBUN</Link></li>

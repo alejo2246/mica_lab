@@ -13,14 +13,7 @@ import React, { useState, useEffect } from 'react';
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const controls = useAnimation();
   const router = useRouter();
-  const [animationStarted, setAnimationStarted] = useState(false);
-
-  const animate = async () => {
-    setAnimationStarted(true);
-    await controls.start({ opacity: 1, scale: 1 });
-  };
 
   useEffect(() => {
     const redirectionTimeout = setTimeout(() => {
@@ -39,16 +32,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.animationContainer}>
-        <motion.div
-          initial={{ opacity: 1, scale: 1 }}
-          animate={controls}
-          onAnimationComplete={animate}
-          onClick={() => {
-            if (!animationStarted) {
-              animate();
-            }
-          }}
-        >
           <div className="circle-container">
             <div className="circle">
               <LeftCircle />
@@ -57,7 +40,6 @@ export default function Home() {
             <YellowCircle />
             <TextImage />
           </div>
-        </motion.div>
       </main>
     </>
   );
