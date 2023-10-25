@@ -12,7 +12,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  max-width: 1272px;
 }
 
 html,
@@ -39,7 +38,6 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  
 }
 
 .navbar-container {
@@ -47,16 +45,14 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  margin-left: 10%;
-  font-family: 'Prive';
+  font-family: "Prive";
   font-size: 20px;
-  color: red; 
+  color: red;
 }
 
 .navbar-logo {
@@ -69,14 +65,14 @@ a {
   font-size: 20px;
 }
 .navbar-item:hover {
-  color: red; 
+  color: red;
 }
 .navbar-list {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-  font-family: 'Prive';
+  font-family: "Prive";
 }
 
 .navbar-item {
@@ -85,7 +81,7 @@ a {
 .sub-menu {
   display: none;
   position: absolute;
-  background-color: #E5DFD8;
+  background-color: #e5dfd8;
   padding: 10px;
   border-radius: 5%;
   color: #000000;
@@ -120,7 +116,7 @@ a {
 .circle {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .content-container {
@@ -136,14 +132,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .responsive-image {
   max-width: 100%;
   max-height: 100%;
-  width: 1220px; 
-  height: 1510px; 
+  width: 1220px;
+  height: 1510px;
   margin-bottom: 5%;
 }
 
@@ -163,14 +158,12 @@ a {
   font-family: Prive;
 }
 
-
 .chicubun-subtitle {
   font-size: 18px;
   font-family: prive;
   max-width: 925px;
   margin-bottom: 3%;
 }
-
 
 .chicubun-image-container {
   display: flex;
@@ -179,7 +172,6 @@ a {
   margin-bottom: 5%;
 }
 
-
 .chicubun-image {
   max-width: 100%;
   max-height: 100%;
@@ -187,124 +179,136 @@ a {
   height: auto;
 }
 
-
-
-
 @font-face {
-  font-family: 'Prive';
-  src: url('/public/Prive\ Regular.otf') format('opentype');
+  font-family: "Eczar";
+  src: url("/fonts/eczar/Eczar-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eczar';
-  src: url('/public/Eczar-VariableFont_wght.ttf') format('woff2');
+  font-family: "Eczar-Bold";
+  src: url("/fonts/eczar/Eczar-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
-        /* Estilos para la página About */
-        .about-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          margin-bottom: 10%;
-          margin-top:8%;
-        }
+@font-face {
+  font-family: "Prive";
+  src: url("/fonts/prive/Prive Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-        .about-title {
-          font-family: 'Prive';
-          font-size: 22px;
-          font-weight: 700;
-          line-height: 61px;
-          letter-spacing: 0em;
-          text-align: left;
-          margin-bottom: 5%;
-          color: #FF0200;
-          margin-left: 2%;
-        }
+@font-face {
+  font-family: "Prive-Bold";
+  src: url("/fonts/prive/Prive Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
 
-        .about-columns {
-          display: flex;
-          justify-content: center;
-        }
+/* Estilos para la página About */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 8%;
+}
 
-        .about-text {
-          flex: 1;
-          font-family: 'Eczar';
-          font-size: 21px;
-          font-weight: 400;
-          line-height: 37px;
-          letter-spacing: 0em;
-          text-align: left;
-          padding: 0 3%;
-          max-height: 568px;
-          max-height: 100%;
-          margin-bottom: 10%;
-          max-width: 472px;
-          color: #000000;
-          
-        }
+.about-title {
+  font-family: "Prive";
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 61px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 5%;
+  color: #ff0200;
+  margin-left: 2%;
+}
 
-        .about-image-container {
-          display: flex;
-          justify-content: center;
-        }
+.about-columns {
+  display: flex;
+  justify-content: center;
+}
 
-        .about-image {
-          max-width: 100%;
-          width: 100%;
-          height: auto;
-        }
+.about-text {
+  flex: 1;
+  font-family: "Eczar";
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0 3%;
+  max-height: 568px;
+  max-height: 100%;
+  margin-bottom: 10%;
+  max-width: 472px;
+  color: #000000;
+}
 
-        .about-content-container {
-          margin: 0 10%;
-          margin-bottom: 10px;
-        }
+.about-image-container {
+  display: flex;
+  justify-content: center;
+}
 
-        .text-and-image-container {
-          display: flex;
-          flex-direction: column;
-          max-width: 100%;
-        }
+.about-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
 
+.about-content-container {
+  margin: 0 10%;
+  margin-bottom: 10px;
+}
 
+.text-and-image-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
 
-        /* Estilos para la página Credits */
-        .credits-container {
-          margin-left: 11%;
-          margin-top: 3%;
-        }
+/* Estilos para la página Credits */
+.credits-container {
+  margin-left: 11%;
+  margin-top: 3%;
+}
 
-        .section-title {
-          font-weight: bold;
-          margin-bottom: 1%;
-          font-family: Prive;
-          font-size: 42px;
-          font-weight: 700;
-          line-height: 50px;
-          letter-spacing: 0em;
-          text-align: left;
-          color: #FF0200;
-        }
-        .section{
-          margin-bottom: 2%;
-        }
-        .credit1{
-          color:#FF0200;
-          font-family: Prive;
-          font-size: 31px;
-          font-weight: 700;
-          line-height: 36px;
-          letter-spacing: 0em;
-          text-align: left;
-        }
+.section-title {
+  font-weight: bold;
+  margin-bottom: 1%;
+  font-family: Prive;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ff0200;
+}
+.section {
+  margin-bottom: 2%;
+}
+.credit1 {
+  color: #ff0200;
+  font-family: Prive;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-        .credtuser{
-          font-family: Prive;
-          font-size: 31px;
-          font-weight: 700;
-          line-height: 36px;
-          letter-spacing: 0em;
-          text-align: left;
-          color: #552C3C;
-          max-width: 950px;
-        }
+.credtuser {
+  font-family: Prive;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #552c3c;
+  max-width: 950px;
+}

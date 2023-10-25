@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -7,13 +7,27 @@ import LeftCircle from "@/components/animation/LeftCircle";
 import RightCircle from "@/components/animation/RightCircle";
 import YellowCircle from "@/components/animation/YellowCircle";
 import TextImage from "@/components/animation/TextImage";
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
+  const [animationStarted, setAnimationStarted] = useState(false);
+
+  const audioRef = React.useRef(null);
+  const handleClick = () => {
+    if (!animationStarted) {
+      animate();
+    }
+  };
+  const animate = async () => {
+    setAnimationStarted(true);
+    await controls.start({ opacity: 1, scale: 1 });
+    audioRef.current.volume = 0.1;
+    audioRef.current.play();
+  };
 
   
   // useEffect(() => {
@@ -32,16 +46,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.animationContainer}>
-          <div className="circle-container">
-            <div className="circle">
-              <LeftCircle />
-              <RightCircle />
-            </div>
-            <YellowCircle />
-            <TextImage />
+      <div
+        className={styles.animationContainer}
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="circle-container">
+          <div className="circle">
+            <LeftCircle />
+            <RightCircle />
           </div>
-      </main>
+          <YellowCircle />
+          <TextImage />
+        </div>
+
+        <audio ref={audioRef} src="./audios/INSTRUMENTOS.mp3" />
+      </div>
     </>
   );
 }
