@@ -13,7 +13,6 @@ import React, { useState, useEffect, useRef } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const controls = useAnimation();
   const router = useRouter();
   const [animationStarted, setAnimationStarted] = useState(false);
 
@@ -55,21 +54,15 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <motion.div
-          initial={{ opacity: 1, scale: 1 }}
-          animate={controls}
-          // onAnimationComplete={animate}
-          onClick={handleClick}
-        >
-          <div className="circle-container">
-            <div className="circle">
-              <LeftCircle />
-              <RightCircle />
-            </div>
-            <YellowCircle />
-            <TextImage />
+        <div className="circle-container">
+          <div className="circle">
+            <LeftCircle />
+            <RightCircle />
           </div>
-        </motion.div>
+          <YellowCircle />
+          <TextImage />
+        </div>
+
         <audio ref={audioRef} src="./audios/INSTRUMENTOS.mp3" />
       </div>
     </>

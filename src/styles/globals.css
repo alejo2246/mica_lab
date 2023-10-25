@@ -50,7 +50,6 @@ a {
 .navbar-left {
   display: flex;
   align-items: center;
-  margin-left: 10%;
   font-family: "Prive";
   font-size: 20px;
   color: red;
