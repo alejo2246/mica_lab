@@ -15,12 +15,13 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const router = useRouter();
 
-  useEffect(() => {
-    const redirectionTimeout = setTimeout(() => {
-      router.push('/home', undefined, { shallow: true });
-    }, 5000);
-    return () => clearTimeout(redirectionTimeout);
-  }, []);
+  
+  // useEffect(() => {
+  //   const redirectionTimeout = setTimeout(() => {
+  //     router.push('/home', undefined, { shallow: true });
+  //   }, 5000);
+  //   return () => clearTimeout(redirectionTimeout);
+  // }, []);
 
   return (
     <>
