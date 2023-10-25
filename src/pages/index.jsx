@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -7,8 +7,8 @@ import LeftCircle from "@/components/animation/LeftCircle";
 import RightCircle from "@/components/animation/RightCircle";
 import YellowCircle from "@/components/animation/YellowCircle";
 import TextImage from "@/components/animation/TextImage";
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,14 +17,22 @@ export default function Home() {
   const router = useRouter();
   const [animationStarted, setAnimationStarted] = useState(false);
 
+  const audioRef = React.useRef(null);
+  const handleClick = () => {
+    if (!animationStarted) {
+      animate();
+    }
+  };
   const animate = async () => {
     setAnimationStarted(true);
     await controls.start({ opacity: 1, scale: 1 });
+    audioRef.current.volume = 0.1;
+    audioRef.current.play();
   };
 
   useEffect(() => {
     const redirectionTimeout = setTimeout(() => {
-      router.push('/home', undefined, { shallow: true });
+      router.push("/home", undefined, { shallow: true });
     }, 5000);
     return () => clearTimeout(redirectionTimeout);
   }, []);
@@ -38,16 +46,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.animationContainer}>
+      <div
+        className={styles.animationContainer}
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <motion.div
           initial={{ opacity: 1, scale: 1 }}
           animate={controls}
-          onAnimationComplete={animate}
-          onClick={() => {
-            if (!animationStarted) {
-              animate();
-            }
-          }}
+          // onAnimationComplete={animate}
+          onClick={handleClick}
         >
           <div className="circle-container">
             <div className="circle">
@@ -58,7 +70,8 @@ export default function Home() {
             <TextImage />
           </div>
         </motion.div>
-      </main>
+        <audio ref={audioRef} src="./audios/INSTRUMENTOS.mp3" />
+      </div>
     </>
   );
 }

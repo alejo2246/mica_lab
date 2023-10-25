@@ -7,7 +7,7 @@ const YellowCircle = () => {
         className="circle"
         initial={{ opacity: 1, scale: 1,x:135 }}
         animate={{ opacity: 0, scale: 1 ,x:135}}
-        transformOrigin="center"
+        transformorigin="center"
         transition={{ duration: 4 }}
       >
         <Image src={yellowCircleImage} alt="Yellow Circle" width={206} height={213} />

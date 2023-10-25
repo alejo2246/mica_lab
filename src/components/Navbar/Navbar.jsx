@@ -19,7 +19,7 @@ const Navbar = () => {
             <li className="navbar-item">
               <div className="menu-item">
                 <Link href="/about">FUECHY</Link>
-                <ul class="sub-menu">
+                <ul className="sub-menu">
                   <li><Link href="/aguene">UBASUCAC AGUENÉ</Link></li>
                   <li><Link href="/chicubun">CHICUBUN</Link></li>
                   <li><Link href="/quyca">QUYCA</Link></li>
