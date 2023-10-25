@@ -15,24 +15,38 @@ const Navbar = () => {
           <Typography text="MICA LAB" sx={"hola"} />
         </div>
         <div className="navbar-right">
-          <ul className="navbar-list">
-            <li className="navbar-item">
+          <div className="navbar-list">
+            <span className="navbar-item">
               <div className="menu-item">
-                <Link href="/ubasucac" style={{color:'red'}}>FUECHY <img src="/flecha.svg" alt="Descripción del SVG" width="16" height="16" /></Link>
+                <Link href="/ubasucac" style={{ color: "red" }}>
+                  FUECHY{" "}
+                  <img
+                    src="/flecha.svg"
+                    alt="Descripción del SVG"
+                    width="16"
+                    height="16"
+                  />
+                </Link>
                 <ul className="sub-menu">
-                  <li><Link href="/aguene">UBASUCAC AGUENÉ</Link></li>
-                  <li><Link href="/chicubun">CHICUBUN</Link></li>
-                  <li><Link href="/quyca">QUYCA</Link></li>
+                  <li>
+                    <Link href="/aguene">UBASUCAC AGUENÉ</Link>
+                  </li>
+                  <li>
+                    <Link href="/chicubun">CHICUBUN</Link>
+                  </li>
+                  <li>
+                    <Link href="/quyca">QUYCA</Link>
+                  </li>
                 </ul>
               </div>
-            </li>
-            <li className="navbar-item">
+            </span>
+            <span className="navbar-item">
               <Link href="/about">SOBRE EL PROYECTO</Link>
-            </li>
-            <li className="navbar-item">
+            </span>
+            <span className="navbar-item">
               <Link href="/credits">CRÉDITOS</Link>
-            </li>
-          </ul>
+            </span>
+          </div>
         </div>
       </div>
     </nav>

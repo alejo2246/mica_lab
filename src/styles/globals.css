@@ -44,7 +44,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  margin-top: 37px;
 }
 
 .navbar-left {
@@ -61,7 +61,7 @@ a {
 
 .navbar-right {
   display: flex;
-  margin-right: 10%;
+
   font-size: 20px;
 }
 .navbar-item:hover {
