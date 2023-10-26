@@ -6,7 +6,7 @@ const LeftCircle = () => {
       <motion.div
         className="circle"
         initial={{ opacity: 1, x: 450 }}
-        animate={{ opacity: 1, x: 110 }} // ajusta el valor de x para separar el círculo
+        animate={{ opacity: 1, x: 110 }}
         transition={{ duration: 4 }}
       >
         <Image src={leftCircleImage} alt="Left Circle" width={214} height={440} />

@@ -29,9 +29,10 @@ export default function Home() {
     audioRef.current.play();
   };
 
+  
   useEffect(() => {
     const redirectionTimeout = setTimeout(() => {
-      router.push("/home", undefined, { shallow: true });
+      router.push('/home', undefined, { shallow: true });
     }, 5000);
     return () => clearTimeout(redirectionTimeout);
   }, []);
