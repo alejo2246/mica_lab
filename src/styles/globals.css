@@ -343,3 +343,16 @@ a {
   color: #552C3C;
   border-bottom: 3px solid #552C3C;
 }
+.textcontainer:hover{
+  font-family: Eczar;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: red;
+  border-bottom: 3px solid red;
+}
+.closethat:hover{
+  fill: red;
+}

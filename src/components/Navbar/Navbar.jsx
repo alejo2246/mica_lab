@@ -29,7 +29,7 @@ const Navbar = () => {
                 </Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link href="/aguene">UBASUCAC AGUENÉ</Link>
+                    <Link href="/ubasucac">UBASUCAC AGUENÉ</Link>
                   </li>
                   <li>
                     <Link href="/chicubun">CHICUBUN</Link>

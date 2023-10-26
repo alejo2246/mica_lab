@@ -1,44 +1,69 @@
 import Navbar from "@/components/Navbar/Navbar";
 import React, { useEffect, useState } from 'react';
 
+
 const Ubasucac = () => {
-    const [indicatorOffset, setIndicatorOffset] = useState(0);
-  
-    const handleMouseEnter = (index) => {
-      document.getElementById(`imagen${index}`).style.fill = 'red';
-      document.getElementById(`fecha${index}`).style.color = 'red';
-      document.getElementById(`fecha${index}`).style.fontSize = '40px';
-      document.getElementById(`imagen${index}`).src = '/ubasucac/union2.svg';
-  
-      const newIndicatorOffset = (index - 1) * 5.5;
-      setIndicatorOffset(newIndicatorOffset);
-    };
-  
-    const handleMouseLeave = (index) => {
-      document.getElementById(`imagen${index}`).style.fill = 'black';
-      document.getElementById(`fecha${index}`).style.color = 'black';
-      document.getElementById(`fecha${index}`).style.fontSize = '1em';
-      document.getElementById(`imagen${index}`).src = '/ubasucac/union.svg';
-  
-      setIndicatorOffset(0);
-    };
-  
-    useEffect(() => {
+  const [indicatorOffset, setIndicatorOffset] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(1);
+  const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true); // Controla la visibilidad del primer contenedor
+  const [isSecondContainerVisible, setIsSecondContainerVisible] = useState(false); // Controla la visibilidad del segundo contenedor
+
+  const handleMouseEnter = (index) => {
+    document.getElementById(`imagen${index}`).style.fill = 'red';
+    document.getElementById(`fecha${index}`).style.color = 'red';
+    document.getElementById(`fecha${index}`).style.fontSize = '40px';
+    document.getElementById(`imagen${index}`).src = '/ubasucac/union2.svg';
+
+    const newIndicatorOffset = (index - 1) * 5.5;
+    setIndicatorOffset(newIndicatorOffset);
+  };
+
+  const handleMouseLeave = (index) => {
+    document.getElementById(`imagen${index}`).style.fill = 'black';
+    document.getElementById(`fecha${index}`).style.color = 'black';
+    document.getElementById(`fecha${index}`).style.fontSize = '1em';
+    document.getElementById(`imagen${index}`).src = '/ubasucac/union.svg';
+
+    setIndicatorOffset(0);
+  };
+
+  const handleImageClick = (index) => {
+    setSelectedImage(index);
+
+    // Cuando se hace clic en una imagen, ocultar el primer contenedor y mostrar el segundo.
+    setIsFirstContainerVisible(false);
+    setIsSecondContainerVisible(true);
+  };
+
+  const changeImage = (newIndex) => {
+    if (newIndex >= 1 && newIndex <= 6) {
+      setSelectedImage(newIndex);
+    }
+  };
+
+  const handleSecondContainerClose = () => {
+    // Cuando se cierra el segundo contenedor, volver a mostrar el primer contenedor.
+    setIsFirstContainerVisible(true);
+    setIsSecondContainerVisible(false);
+  };
+
+  useEffect(() => {
+    for (let i = 1; i <= 6; i++) {
+      const imagen = document.getElementById(`imagen${i}`);
+      imagen.addEventListener('mouseenter', () => handleMouseEnter(i));
+      imagen.addEventListener('mouseleave', () => handleMouseLeave(i));
+      imagen.addEventListener('click', () => handleImageClick(i));
+    }
+
+    return () => {
       for (let i = 1; i <= 6; i++) {
         const imagen = document.getElementById(`imagen${i}`);
-        imagen.addEventListener('mouseenter', () => handleMouseEnter(i));
-        imagen.addEventListener('mouseleave', () => handleMouseLeave(i));
+        imagen.removeEventListener('mouseenter', () => handleMouseEnter(i));
+        imagen.removeEventListener('mouseleave', () => handleMouseLeave(i));
+        imagen.removeEventListener('click', () => handleImageClick(i));
       }
-  
-      return () => {
-        for (let i = 1; i <= 6; i++) {
-          const imagen = document.getElementById(`imagen${i}`);
-          imagen.removeEventListener('mouseenter', () => handleMouseEnter(i));
-          imagen.removeEventListener('mouseleave', () => handleMouseLeave(i));
-        }
-      };
-    }, []);
-
+    };
+  }, []);
   return (
     <div>
       <Navbar />
@@ -46,7 +71,8 @@ const Ubasucac = () => {
         <h1 className="chicubun-title">UBASUCAC AGUENÉ</h1>
         <h2 className="chicubun-subtitle">de click sobre la línea de tiempo o <br />sobre para visualizar la info cartográfica</h2>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10%', position: 'relative', marginBottom: '10%' }}>
+      {isFirstContainerVisible && (
+        <div className="primercontenedor" style={{ display: 'flex', justifyContent: 'center', marginTop: '0%', position: 'relative', marginBottom: '10%' }}>
         <div style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
           <div style={{ marginLeft: '10px', display: 'flex' }}>
             <div>
@@ -76,30 +102,39 @@ const Ubasucac = () => {
           </div>
         </div>
       </div>
-      <div style={{ position: 'relative', width: '100%', paddingTop: '60%' }}>
-  <img src="/ubasucac/union3.svg" style={{ position: 'absolute', top: 0, left: '-0.6%', width: '100%', height: '100%', zIndex: 1 }} />
-  <img src="/ubasucac/vector.svg" style={{ position: 'absolute', top: '-0.2%', left: 0, width: '98%', height: '100%', zIndex: 2 }} />
-  
-  <div style={{ position: 'absolute', bottom: '23%', left: '4%', width: '98%', height: '100%',maxHeight:'500px', zIndex: 3 }}>
-    <img src="/ubasucac/Rectangle 10.png" style={{height:'100%'}}></img>
-  </div>
+      )}
+      {isSecondContainerVisible && (
+        <div className="segundocontenedor" style={{ position: 'relative', width: '100%', paddingTop: '60%' }}>
+        <img src="/ubasucac/union3.svg" style={{ position: 'absolute', top: 0, left: '-0.6%', width: '100%', height: '100%', zIndex: 1 }} />
+        <img src="/ubasucac/vector.svg" style={{ position: 'absolute', top: '-0.2%', left: 0, width: '98%', height: '100%', zIndex: 2 }} />
+        
+        <div  style={{ position: 'absolute', bottom: '23%', left: '4%', width: '98%', height: '100%',maxHeight:'500px', zIndex: 3 }}>
+          <img src={`/ubasucac/imagen_${selectedImage}.png`} style={{ height: '100%' }} alt={`Imagen ${selectedImage}`} />
+        </div>
 
-  <img src="/ubasucac/close.svg" style={{ position: 'absolute', zIndex: 4, top: '10%', right:'3%'}}/>
-  <img src="/ubasucac/Layerleft.svg" style={{ position: 'absolute', zIndex: 4, top: '50%', left:'4%'}}/>
-  <img src="/ubasucac/Layerright.svg" style={{ position: 'absolute', zIndex: 4, top: '50%', right:'7%'}}/>
-  <img src="/ubasucac/Group 1.svg" style={{ position: 'absolute', zIndex: 4, bottom:'7%', left:'3%'}}/>
+        <img className="closethat" src="/ubasucac/close.svg" style={{ position: 'absolute', zIndex: 4, top: '10%', right:'3%'}} onClick={handleSecondContainerClose}/>
+        <img 
+          className="closethat" 
+          src="/ubasucac/Layerleft.svg" 
+          style={{ position: 'absolute', zIndex: 4, top: '50%', left:'4%', cursor: 'pointer' }}
+          onClick={() => changeImage(selectedImage - 1)}
+        />
+        <img 
+          className="closethat" 
+          src="/ubasucac/Layerright.svg" 
+          style={{ position: 'absolute', zIndex: 4, top: '50%', right:'7%', cursor: 'pointer' }}
+          onClick={() => changeImage(selectedImage + 1)}
+        />
+        <img src="/ubasucac/Group 1.svg" style={{ position: 'absolute', zIndex: 4, bottom:'7%', left:'3%'}} />
 
-
-  <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', zIndex: 4, bottom: '7%', right: '5%'}}>
-    <img src="/ubasucac/download.svg"  />
-    <p className="textcontainer" style={{ marginLeft: '10px' }}>Descarga la imagen acá</p>
-  </div>
-</div>
-
-
-
-
-
+        <div className="contenedor">
+          <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', zIndex: 4, bottom: '7%', right: '5%' }}>
+            <img src="/ubasucac/download.svg"  />
+            <p className="textcontainer" style={{ marginLeft: '10px' }}>Descarga la imagen acá</p>
+          </div>
+        </div>
+      </div>
+      )}
     </div>
   );
 };
