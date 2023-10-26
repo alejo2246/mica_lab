@@ -3,6 +3,14 @@ import React, { useEffect, useState } from 'react';
 
 
 const Ubasucac = () => {
+
+  const downloadImage = () => {
+    const imageSrc = `/ubasucac/imagen_${selectedImage}.png`;
+    const downloadLink = document.createElement('a');
+    downloadLink.href = imageSrc;
+    downloadLink.setAttribute('download', `imagen_${selectedImage}.png`);
+    downloadLink.click();
+  };
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [selectedImage, setSelectedImage] = useState(1);
   const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true); 
@@ -45,7 +53,18 @@ const Ubasucac = () => {
     setIsSecondContainerVisible(false);
   };
 
+
+  const handleArrowMouseEnter = (direction) => {
+    const imageName = direction === 'left' ? 'Layerleft' : 'Layerright';
+    document.getElementById(`arrow${direction}`).src = `/ubasucac/${imageName}2.svg`;
+  };
+  
+  const handleArrowMouseLeave = (direction) => {
+    document.getElementById(`arrow${direction}`).src = `/ubasucac/${direction === 'left' ? 'Layerleft' : 'Layerright'}.svg`;
+  };
+  
   useEffect(() => {
+
     for (let i = 1; i <= 6; i++) {
       const imagen = document.getElementById(`imagen${i}`);
       imagen.addEventListener('mouseenter', () => handleMouseEnter(i));
@@ -54,6 +73,7 @@ const Ubasucac = () => {
     }
 
     return () => {
+
       for (let i = 1; i <= 6; i++) {
         const imagen = document.getElementById(`imagen${i}`);
         imagen.removeEventListener('mouseenter', () => handleMouseEnter(i));
@@ -91,12 +111,12 @@ const Ubasucac = () => {
           </div>
           <div>
             <img src="/ubasucac/espiral.svg" style={{ width: '100%', maxWidth: '724px', height: 'auto', marginLeft: '10%' }} alt="Imagen de fondo" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '30%', marginTop: '-30%' }} alt="Imagen12" id="imagen1" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '37%', marginTop: '-39%' }} alt="Imagen13" id="imagen2" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '21.8%', marginTop: '-35%' }} alt="Imagen14" id="imagen3" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '41.5%', marginTop: '-24%' }} alt="Imagen15" id="imagen4" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '27%', marginTop: '-45.5%' }} alt="Imagen16" id="imagen5" />
-            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', marginLeft: '26%', marginTop: '-14%' }} alt="Imagen17" id="imagen6" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '46.4%', top: '45%' }} alt="Imagen12" id="imagen1" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', right: '44%', top: '33%' }} alt="Imagen13" id="imagen2" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '39.5%', top: '36%' }} alt="Imagen14" id="imagen3" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', right: '41.5%', bottom: '41.5%' }} alt="Imagen15" id="imagen4" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '44%', top: '21.5%' }} alt="Imagen16" id="imagen5" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '44%', bottom: '26%' }} alt="Imagen17" id="imagen6" />
           </div>
         </div>
       </div>
@@ -127,8 +147,15 @@ const Ubasucac = () => {
 
         <div className="contenedor">
           <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', zIndex: 4, bottom: '7%', right: '5%' }}>
-            <img src="/ubasucac/download.svg"  />
-            <p className="textcontainer" style={{ marginLeft: '10px' }}>Descarga la imagen acá</p>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+  <button style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center' }} onClick={downloadImage}>
+    <img src="/ubasucac/download.svg" alt="Descargar imagen" style={{ marginRight: '10px' }} />
+    <p className="textcontainer">Descarga la imagen acá</p>
+  </button>
+</div>
+
+
           </div>
         </div>
       </div>
