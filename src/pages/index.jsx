@@ -30,12 +30,12 @@ export default function Home() {
   };
 
   
-  // useEffect(() => {
-  //   const redirectionTimeout = setTimeout(() => {
-  //     router.push('/home', undefined, { shallow: true });
-  //   }, 5000);
-  //   return () => clearTimeout(redirectionTimeout);
-  // }, []);
+  useEffect(() => {
+    const redirectionTimeout = setTimeout(() => {
+      router.push('/home', undefined, { shallow: true });
+    }, 5000);
+    return () => clearTimeout(redirectionTimeout);
+  }, []);
 
   return (
     <>

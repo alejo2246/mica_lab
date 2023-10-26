@@ -312,3 +312,34 @@ a {
   color: #552c3c;
   max-width: 950px;
 }
+
+/*///////////////////////////////////////////////*/
+
+.fechassub{
+  font-family: Eczar;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-left: 5%;
+  white-space: nowrap;
+  width: 169px;
+  height: 56px;
+
+}
+
+.fechassub p{
+  margin-bottom: 8%;
+}
+
+.textcontainer{
+  font-family: Eczar;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #552C3C;
+  border-bottom: 3px solid #552C3C;
+}
