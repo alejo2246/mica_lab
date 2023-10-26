@@ -1,55 +1,66 @@
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import React, { useRef, useEffect } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-const Viewer = ({ modelPath }) => {
-  let scene, camera, renderer, controls;
-
+const Panorama = () => {
   useEffect(() => {
-    const init = () => {
-      // Configuración de la escena
-      scene = new THREE.Scene();
+    // Configuración de Three.js
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    const renderer = new THREE.WebGLRenderer();
 
-      // Configuración de la cámara
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    //   camera.position.z = 5;
-      camera.position.set(0, 0, 10); // Otra posición que pueda mostrar el modelo
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document
+      .getElementById("panorama-container")
+      .appendChild(renderer.domElement);
 
+    // Crear una esfera para el panorama
+    const geometry = new THREE.SphereGeometry(500, 60, 40);
+    geometry.scale(-1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({
+      map: new THREE.TextureLoader().load("./objects/image.jpg"),
+    });
 
-      // Configuración del renderizador
-      renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0xffffff);
-      document.body.appendChild(renderer.domElement);
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
 
-      // Configuración del modelo GLB
-      const loader = new GLTFLoader();
-      loader.load(modelPath, (gltf) => {
-        gltf.scene.rotation.x = Math.PI / 2;
-        gltf.scene.scale.set(1, 1, 1); // Ajusta la escala según tus necesidades
+    // Configuración de la cámara
+    camera.position.set(0, 0, 0.5);
+
+    // Agregar controles de órbita
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false; // Desactivar zoom para una imagen panorámica fija
+
+    const loader = new GLTFLoader();
+    loader.load(
+      "./objects/collage.gltf",
+      (gltf) => {
+        // Escalar el modelo si es necesario
+        gltf.scene.scale.set(0.01, 0.01, 0.01);
+
+        // Colocar el modelo en el centro de la escena
+        gltf.scene.position.set(0, 0, 0);
+
         scene.add(gltf.scene);
-      });
-      
-      
-
-      // Configuración de OrbitControls para permitir la interactividad
-      controls = new OrbitControls(camera, renderer.domElement);
+      },
+      undefined,
+      (error) => {
+        console.error("Error cargando el modelo GLTF", error);
+      }
+    );
+    // Animación
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update(); // Actualizar los controles en cada frame
+      renderer.render(scene, camera);
     };
 
-    const animate = () => {
-        requestAnimationFrame(animate);
-      
-        // Actualiza los controles
-        controls.update();
-      
-        // Renderiza la escena
-        renderer.render(scene, camera);
-      };
-      
-
-    // Inicializa la escena y comienza la animación
-    init();
     animate();
 
     // Manejar el cambio de tamaño de la ventana
@@ -59,16 +70,18 @@ const Viewer = ({ modelPath }) => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    // Agrega el listener para el cambio de tamaño
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    // Limpia el listener cuando el componente se desmonta
+    // Limpiar al desmontar el componente
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
+      document
+        .getElementById("panorama-container")
+        .removeChild(renderer.domElement);
     };
-  }, [modelPath]);
+  }, []);
 
-  return null; // No renderizamos nada en React, ya que Three.js se encarga de la renderización
+  return <div id="panorama-container" />;
 };
 
-export default Viewer;
+export default Panorama;
