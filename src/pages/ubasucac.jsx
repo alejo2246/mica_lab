@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react';
 const Ubasucac = () => {
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [selectedImage, setSelectedImage] = useState(1);
-  const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true); // Controla la visibilidad del primer contenedor
-  const [isSecondContainerVisible, setIsSecondContainerVisible] = useState(false); // Controla la visibilidad del segundo contenedor
+  const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true); 
+  const [isSecondContainerVisible, setIsSecondContainerVisible] = useState(false);
 
   const handleMouseEnter = (index) => {
     document.getElementById(`imagen${index}`).style.fill = 'red';
@@ -30,7 +30,6 @@ const Ubasucac = () => {
   const handleImageClick = (index) => {
     setSelectedImage(index);
 
-    // Cuando se hace clic en una imagen, ocultar el primer contenedor y mostrar el segundo.
     setIsFirstContainerVisible(false);
     setIsSecondContainerVisible(true);
   };
@@ -42,7 +41,6 @@ const Ubasucac = () => {
   };
 
   const handleSecondContainerClose = () => {
-    // Cuando se cierra el segundo contenedor, volver a mostrar el primer contenedor.
     setIsFirstContainerVisible(true);
     setIsSecondContainerVisible(false);
   };
