@@ -83,6 +83,7 @@ const Ubasucac = () => {
     };
   }, []);
   return (
+    
     <div>
       <Navbar />
       <div className="chicubun-container">
