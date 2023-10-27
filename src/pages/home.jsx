@@ -5,15 +5,20 @@ import Link from "next/link";
 const HomePage = () => {
   const modelPath = "./objects/image.jpg";
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Navbar />
       <div
         style={{
-          height: "100vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
+        id="container"
       >
         <Panorama />
       </div>
