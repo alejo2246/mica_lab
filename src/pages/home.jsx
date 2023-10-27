@@ -17,6 +17,7 @@ const HomePage = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flex: "1",
         }}
         id="container"
       >

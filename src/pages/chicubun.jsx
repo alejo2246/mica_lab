@@ -10,12 +10,12 @@ const chicubun = () => {
     if (!hasMounted.current) {
       const imageContainer = document.getElementById("image-container");
 
-      for (let i = 1; i <= 29; i++) {
+      for (let i = 1; i <= 16; i++) {
         const image = document.createElement("img");
         image.className = "imageInte";
         image.classList.add("grayFilter");
         image.classList.add(`image${i}`);
-        image.src = `./interaccion_BN/IMAGENES CORTADAS/image${i}.png`;
+        image.src = `./interaccion_BN/imagen${i}.png`;
         imageContainer.appendChild(image);
 
         image.addEventListener("mouseenter", () => {
@@ -30,7 +30,7 @@ const chicubun = () => {
         image.addEventListener("click", () => {
           image.classList.remove("grayFilter");
           audioRef.current.pause();
-          audioRef.current.src = `./interaccion_BN/IMAGENES CORTADAS/audio${i}.mp3`;
+          audioRef.current.src = `./interaccion_BN/audio${i}.mp3`;
           audioRef.current.volume = 0.1;
           audioRef.current.play();
         });
@@ -50,11 +50,11 @@ const chicubun = () => {
         </h2>
       </div>
       <div className="imageContainer" id="image-container">
-        {/* <img
-          src="/chicubun.png"
+        <img
+          src="./interaccion_BN/MAPEO COLECTIVO.PNG"
           alt="Your Image"
-          className="imageInte grayFilter"
-        /> */}
+          className="imageInte grayFilter imageMapeo"
+        />
       </div>
       <audio ref={audioRef} src="" />
     </div>
