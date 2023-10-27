@@ -2,6 +2,14 @@ import Navbar from "@/components/Navbar/Navbar";
 import React, { useEffect, useState } from "react";
 
 const Ubasucac = () => {
+
+  const downloadImage = () => {
+    const imageSrc = `/ubasucac/imagen_${selectedImage}.png`;
+    const downloadLink = document.createElement('a');
+    downloadLink.href = imageSrc;
+    downloadLink.setAttribute('download', `imagen_${selectedImage}.png`);
+    downloadLink.click();
+  };
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [selectedImage, setSelectedImage] = useState(1);
   const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true);
@@ -45,7 +53,18 @@ const Ubasucac = () => {
     setIsSecondContainerVisible(false);
   };
 
+
+  const handleArrowMouseEnter = (direction) => {
+    const imageName = direction === 'left' ? 'Layerleft' : 'Layerright';
+    document.getElementById(`arrow${direction}`).src = `/ubasucac/${imageName}2.svg`;
+  };
+  
+  const handleArrowMouseLeave = (direction) => {
+    document.getElementById(`arrow${direction}`).src = `/ubasucac/${direction === 'left' ? 'Layerleft' : 'Layerright'}.svg`;
+  };
+  
   useEffect(() => {
+
     for (let i = 1; i <= 6; i++) {
       const imagen = document.getElementById(`imagen${i}`);
       imagen.addEventListener("mouseenter", () => handleMouseEnter(i));
@@ -54,12 +73,13 @@ const Ubasucac = () => {
     }
 
     return () => {
-      // for (let i = 1; i <= 6; i++) {
-      //   const imagen = document.getElementById(`imagen${i}`);
-      //   imagen.removeEventListener('mouseenter', () => handleMouseEnter(i));
-      //   imagen.removeEventListener('mouseleave', () => handleMouseLeave(i));
-      //   imagen.removeEventListener('click', () => handleImageClick(i));
-      // }
+
+      for (let i = 1; i <= 6; i++) {
+        const imagen = document.getElementById(`imagen${i}`);
+        imagen.removeEventListener('mouseenter', () => handleMouseEnter(i));
+        imagen.removeEventListener('mouseleave', () => handleMouseLeave(i));
+        imagen.removeEventListener('click', () => handleImageClick(i));
+      }
     };
   }, []);
   return (
@@ -73,138 +93,36 @@ const Ubasucac = () => {
         </h2>
       </div>
       {isFirstContainerVisible && (
-        <div
-          className="primercontenedor"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "0%",
-            position: "relative",
-            marginBottom: "10%",
-          }}
-        >
-          <div style={{ width: "100%", display: "flex", alignItems: "center" }}>
-            <div style={{ marginLeft: "10px", display: "flex" }}>
-              <div>
-                <img src="/ubasucac/Lineadetiempo.svg" alt="Imagen 1" />
-                <img
-                  id="indicadorTiempo"
-                  src="/ubasucac/indicadordetiempo.svg"
-                  alt="Indicador de Tiempo"
-                  style={{
-                    position: "absolute",
-                    marginLeft: "-1%",
-                    marginTop: `${indicatorOffset}%`,
-                  }}
-                />
-              </div>
-              <div className="fechassub">
-                <p id="fecha1">1538 - 1650</p>
-                <p id="fecha2">1650 - 1875</p>
-                <p id="fecha3">1875 - 1925</p>
-                <p id="fecha4">1950 - 1967</p>
-                <p id="fecha5">1975 - 1984</p>
-                <p id="fecha6">1989 - 2023</p>
-              </div>
-            </div>
+        <div className="primercontenedor" style={{ display: 'flex', justifyContent: 'center', marginTop: '0%', position: 'relative', marginBottom: '10%' }}>
+        <div style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
+          <div style={{ marginLeft: '10px', display: 'flex' }}>
             <div>
               <img
-                src="/ubasucac/espiral.svg"
-                style={{
-                  width: "100%",
-                  maxWidth: "724px",
-                  height: "auto",
-                  marginLeft: "10%",
-                }}
-                alt="Imagen de fondo"
+                src="/ubasucac/Lineadetiempo.svg"
+                alt="Imagen 1"
               />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "30%",
-                  marginTop: "-30%",
-                }}
-                alt="Imagen12"
-                id="imagen1"
-              />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "37%",
-                  marginTop: "-39%",
-                }}
-                alt="Imagen13"
-                id="imagen2"
-              />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "21.8%",
-                  marginTop: "-35%",
-                }}
-                alt="Imagen14"
-                id="imagen3"
-              />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "41.5%",
-                  marginTop: "-24%",
-                }}
-                alt="Imagen15"
-                id="imagen4"
-              />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "27%",
-                  marginTop: "-45.5%",
-                }}
-                alt="Imagen16"
-                id="imagen5"
-              />
-              <img
-                className="imageunion"
-                src="/ubasucac/union.svg"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  maxWidth: "29px",
-                  height: "auto",
-                  marginLeft: "26%",
-                  marginTop: "-14%",
-                }}
-                alt="Imagen17"
-                id="imagen6"
-              />
+              <img id="indicadorTiempo" src="/ubasucac/indicadordetiempo.svg" alt="Indicador de Tiempo" style={{ position: 'absolute', marginLeft: '-1%', marginTop: `${indicatorOffset}%` }} />
+            </div>
+            <div className="fechassub">
+              <p id="fecha1">1538 - 1650</p>
+              <p id="fecha2">1650 - 1875</p>
+              <p id="fecha3">1875 - 1925</p>
+              <p id="fecha4">1950 - 1967</p>
+              <p id="fecha5">1975 - 1984</p>
+              <p id="fecha6">1989 - 2023</p>
             </div>
           </div>
+          <div>
+            <img src="/ubasucac/espiral.svg" style={{ width: '100%', maxWidth: '724px', height: 'auto', marginLeft: '10%' }} alt="Imagen de fondo" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '46.4%', top: '45%' }} alt="Imagen12" id="imagen1" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', right: '44%', top: '33%' }} alt="Imagen13" id="imagen2" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '39.5%', top: '36%' }} alt="Imagen14" id="imagen3" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', right: '41.5%', bottom: '41.5%' }} alt="Imagen15" id="imagen4" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '44%', top: '21.5%' }} alt="Imagen16" id="imagen5" />
+            <img className="imageunion" src="/ubasucac/union.svg" style={{ position: 'absolute', width: '100%', maxWidth: '29px', height: 'auto', left: '44%', bottom: '26%' }} alt="Imagen17" id="imagen6" />
+          </div>
         </div>
+      </div>
       )}
       {isSecondContainerVisible && (
         <div
@@ -292,24 +210,20 @@ const Ubasucac = () => {
             }}
           />
 
-          <div className="contenedor">
-            <div
-              style={{
-                position: "absolute",
-                display: "flex",
-                alignItems: "center",
-                zIndex: 4,
-                bottom: "7%",
-                right: "5%",
-              }}
-            >
-              <img src="/ubasucac/download.svg" />
-              <p className="textcontainer" style={{ marginLeft: "10px" }}>
-                Descarga la imagen acá
-              </p>
-            </div>
+        <div className="contenedor">
+          <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', zIndex: 4, bottom: '7%', right: '5%' }}>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+  <button style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center' }} onClick={downloadImage}>
+    <img src="/ubasucac/download.svg" alt="Descargar imagen" style={{ marginRight: '10px' }} />
+    <p className="textcontainer">Descarga la imagen acá</p>
+  </button>
+</div>
+
+
           </div>
         </div>
+      </div>
       )}
     </div>
   );
