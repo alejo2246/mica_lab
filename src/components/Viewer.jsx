@@ -30,12 +30,12 @@ const Panorama = () => {
       // const material = new THREE.MeshBasicMaterial({
       //   map: new THREE.TextureLoader().load("./objects/image2.jpg"),
       // });
-
-      const texture = new THREE.TextureLoader().load(
-        "./objects/FONDO PARA VR FINAL.jpg"
-      );
-      texture.mapping = THREE.EquirectangularReflectionMapping;
-      scene.background = texture;
+      scene.background = new THREE.Color(0xf6f1eb);
+      // const texture = new THREE.TextureLoader().load(
+      //   "./objects/FONDO PARA VR FINAL.jpg"
+      // );
+      // texture.mapping = THREE.EquirectangularReflectionMapping;
+      // scene.background = texture;
       // const sphere = new THREE.Mesh(geometry, material);
       // scene.add(sphere);
 
@@ -44,7 +44,13 @@ const Panorama = () => {
 
       // Agregar controles de órbita
       const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableZoom = false; // Desactivar zoom para una imagen panorámica fija
+      controls.enableRotate = true; // Permite la rotación
+      controls.enablePan = false; // Desactiva el desplazamiento/paneo
+      controls.enableZoom = false; // Desactiva el zoom
+
+      // Restringe la rotación solo al eje vertical (Y)
+      controls.minPolarAngle = Math.PI / 2; // Ángulo mínimo (90 grados)
+      controls.maxPolarAngle = Math.PI / 2; // Ángulo máximo (90 grados)
 
       const loader = new GLTFLoader();
       loader.load(

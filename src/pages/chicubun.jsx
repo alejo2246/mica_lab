@@ -55,6 +55,12 @@ const chicubun = () => {
           alt="Your Image"
           className="imageInte grayFilter imageMapeo"
         />
+        <img
+          src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.PNG"
+          alt="Your Image"
+          className=""
+          style={{ mixBlendMode: "multiply" }}
+        />
       </div>
       <audio ref={audioRef} src="" />
     </div>
