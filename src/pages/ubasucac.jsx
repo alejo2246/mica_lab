@@ -17,9 +17,7 @@ const Ubasucac = () => {
   };
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [selectedImage, setSelectedImage] = useState(1);
-  const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true);
-  const [isSecondContainerVisible, setIsSecondContainerVisible] =
-    useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleMouseEnter = (index) => {
     document.getElementById(`imagen${index}`).style.fill = "red";
@@ -56,33 +54,13 @@ const Ubasucac = () => {
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
-
-    setIsFirstContainerVisible(false);
-    setIsSecondContainerVisible(true);
+    setIsModalOpen(true);
   };
 
   const changeImage = (newIndex) => {
     if (newIndex >= 1 && newIndex <= 6) {
       setSelectedImage(newIndex);
     }
-  };
-
-  const handleSecondContainerClose = () => {
-    setIsFirstContainerVisible(true);
-    setIsSecondContainerVisible(false);
-  };
-
-  const handleArrowMouseEnter = (direction) => {
-    const imageName = direction === "left" ? "Layerleft" : "Layerright";
-    document.getElementById(
-      `arrow${direction}`
-    ).src = `/ubasucac/${imageName}2.svg`;
-  };
-
-  const handleArrowMouseLeave = (direction) => {
-    document.getElementById(`arrow${direction}`).src = `/ubasucac/${
-      direction === "left" ? "Layerleft" : "Layerright"
-    }.svg`;
   };
 
   return (
@@ -170,7 +148,7 @@ const Ubasucac = () => {
         </div>
       </div>
 
-      <Modal isOpen={isSecondContainerVisible}>
+      <Modal isOpen={isModalOpen}>
         <div
           className="segundocontenedor"
           style={{
@@ -224,7 +202,7 @@ const Ubasucac = () => {
           <CloseButton
             className="closethat"
             style={{ top: "10%", right: "3%" }}
-            onClick={handleSecondContainerClose}
+            onClick={() => setIsModalOpen(false)}
           />
           <ArrowLeft
             className="closethat"
