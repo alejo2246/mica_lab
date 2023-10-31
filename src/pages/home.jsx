@@ -1,14 +1,27 @@
 import Navbar from "@/components/Navbar/Navbar";
-import Viewer from "@/components/Viewer.jsx";
+import Panorama from "@/components/Viewer.jsx";
 import Link from "next/link";
 
 const HomePage = () => {
-  const modelPath = './objects/collage.gltf';
+  const modelPath = "./objects/image.jpg";
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Navbar />
-      <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Viewer modelPath={modelPath} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flex: "1",
+        }}
+        id="container"
+      >
+        <Panorama />
       </div>
     </div>
   );

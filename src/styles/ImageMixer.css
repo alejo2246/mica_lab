@@ -1,0 +1,87 @@
+/* ImageMixer.module.css */
+
+.imageContainer {
+  position: relative;
+  width: 1085px;
+  height: 878px;
+}
+
+.imageInte {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  mix-blend-mode: multiply;
+}
+
+.grayFilter {
+  filter: grayscale(100%);
+}
+
+.image1 {
+  left: 487px;
+}
+
+.image2 {
+  top: 28px;
+  left: 759px;
+}
+.image3 {
+  top: 162px;
+  left: 677px;
+}
+.image4 {
+  top: 61px;
+  left: 864px;
+}
+.image5 {
+  top: 324px;
+  left: 952px;
+}
+
+.image6 {
+  top: 384px;
+  left: 663px;
+}
+.image7 {
+  top: 413px;
+  left: 782px;
+}
+.image8 {
+  top: 505px;
+  left: 276px;
+}
+.image9 {
+  top: 386px;
+  left: 179px;
+}
+
+.image10 {
+  top: 74px;
+  left: 108px;
+}
+.image12 {
+  top: 350px;
+}
+.image13 {
+  top: 598px;
+  left: 51px;
+}
+.image14 {
+  top: 724px;
+  left: 209px;
+}
+.image15 {
+  top: 790px;
+  left: 453px;
+}
+
+.image16 {
+  top: 774px;
+  left: 573px;
+}
+
+.imageMapeo {
+  top: 233px;
+  left: 410px;
+}

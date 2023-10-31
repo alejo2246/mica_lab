@@ -14,12 +14,17 @@
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@media only screen and (max-width: 1023px) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
-
 body {
   color: rgb(var(--foreground-color));
   background: var(--background-color);
@@ -315,7 +320,7 @@ a {
 
 /*///////////////////////////////////////////////*/
 
-.fechassub{
+.fechassub {
   font-family: Eczar;
   font-size: 32px;
   font-weight: 700;
@@ -326,33 +331,67 @@ a {
   white-space: nowrap;
   width: 169px;
   height: 56px;
-
 }
 
-.fechassub p{
+.fechassub p {
   margin-bottom: 8%;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.textcontainer{
+.textcontainer {
   font-family: Eczar;
   font-size: 31px;
   font-weight: 400;
   line-height: 36px;
   letter-spacing: 0em;
   text-align: left;
-  color: #552C3C;
-  border-bottom: 3px solid #552C3C;
+  color: #552c3c;
+  border-bottom: 3px solid #552c3c;
 }
-.textcontainer:hover{
-  font-family: Eczar;
-  font-size: 31px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: 0em;
-  text-align: left;
+/* .textcontainer:hover {
+  color: red;
+  border-bottom: 3px solid red;
+} */
+.closethat {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  fill: #552c3c;
+}
+.closethat:hover {
+  fill: red;
+}
+
+.circleLineTime {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.circleLineTime:hover {
+  fill: red;
+}
+.smooth-change {
+  transition: all 0.5s ease; /* Ajusta la duración y la función de temporización según tus necesidades */
+}
+.buttonDownload {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  bottom: 7%;
+  right: 5%;
+  cursor: pointer;
+}
+.downloadIcon {
+  margin-right: "10px";
+  fill: #552c3c;
+}
+.buttonDownload:hover .textcontainer {
   color: red;
   border-bottom: 3px solid red;
 }
-.closethat:hover{
+.buttonDownload:hover .downloadIcon {
   fill: red;
 }

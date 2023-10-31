@@ -24,7 +24,7 @@ export default function Home() {
   };
   const animate = async () => {
     setAnimationStarted(true);
-    await controls.start({ opacity: 1, scale: 1 });
+    // await controls.start({ opacity: 1, scale: 1 });
     audioRef.current.volume = 0.1;
     audioRef.current.play();
   };
@@ -55,7 +55,7 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <div className="circle-container">
+        <div className="circle-container" onClick={handleClick}>
           <div className="circle">
             <LeftCircle />
             <RightCircle />
