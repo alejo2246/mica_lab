@@ -17,9 +17,9 @@ const Ubasucac = () => {
   };
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [selectedImage, setSelectedImage] = useState(1);
+  const [selectedImageInGroup, setSelectedImageInGroup] = useState(1);
   const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true);
-  const [isSecondContainerVisible, setIsSecondContainerVisible] =
-    useState(false);
+  const [isSecondContainerVisible, setIsSecondContainerVisible] =useState(false);
 
   const handleMouseEnter = (index) => {
     document.getElementById(`imagen${index}`).style.fill = "red";
@@ -54,36 +54,55 @@ const Ubasucac = () => {
     "1989 - 2023",
   ];
 
+  const changeImageInGroup = (newIndex) => {
+    const maxImagesInGroup = getMaxImagesInGroup(selectedImage);
+  
+    if (newIndex >= 1 && newIndex <= maxImagesInGroup) {
+      setSelectedImageInGroup(newIndex);
+    } else if (newIndex < 1) {
+
+      const previousDate = selectedImage - 1;
+      if (previousDate >= 1) {
+        setSelectedImage(previousDate);
+        setSelectedImageInGroup(getMaxImagesInGroup(previousDate));
+      }
+    } else {
+
+      const nextDate = selectedImage + 1;
+      if (nextDate <= fechas.length) {
+        setSelectedImage(nextDate);
+        setSelectedImageInGroup(1);
+      }
+    }
+  };
+  
+  
+  const getMaxImagesInGroup = (selectedDate) => {
+    const maxImagesPerDate = {
+      1: 3,
+      2: 2, 
+      3: 2,
+      4: 2,
+      5: 2,
+      6: 2,
+
+    };
+    return maxImagesPerDate[selectedDate] || 0;
+  };
   const handleImageClick = (index) => {
     setSelectedImage(index);
-
+    setSelectedImageInGroup(1);
     setIsFirstContainerVisible(false);
     setIsSecondContainerVisible(true);
   };
 
-  const changeImage = (newIndex) => {
-    if (newIndex >= 1 && newIndex <= 6) {
-      setSelectedImage(newIndex);
-    }
-  };
+
 
   const handleSecondContainerClose = () => {
     setIsFirstContainerVisible(true);
     setIsSecondContainerVisible(false);
   };
 
-  const handleArrowMouseEnter = (direction) => {
-    const imageName = direction === "left" ? "Layerleft" : "Layerright";
-    document.getElementById(
-      `arrow${direction}`
-    ).src = `/ubasucac/${imageName}2.svg`;
-  };
-
-  const handleArrowMouseLeave = (direction) => {
-    document.getElementById(`arrow${direction}`).src = `/ubasucac/${
-      direction === "left" ? "Layerleft" : "Layerright"
-    }.svg`;
-  };
 
   return (
     <>
@@ -184,8 +203,8 @@ const Ubasucac = () => {
             src="/ubasucac/union3.svg"
             style={{
               position: "absolute",
-              top: 0,
-              left: "-0.6%",
+              top: '0.3%',
+              left: "-0.8%",
               width: "100%",
               height: "100%",
               zIndex: 1,
@@ -206,7 +225,7 @@ const Ubasucac = () => {
           <div
             style={{
               position: "absolute",
-              bottom: "23%",
+              bottom: "28%",
               left: "4%",
               width: "98%",
               height: "100%",
@@ -214,34 +233,34 @@ const Ubasucac = () => {
               zIndex: 3,
             }}
           >
-            <img
-              src={`/ubasucac/imagen_${selectedImage}.png`}
-              style={{ height: "100%" }}
-              alt={`Imagen ${selectedImage}`}
-            />
+          <img
+            src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
+            style={{ height: "100%" }}
+            alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
+          />
           </div>
-
           <CloseButton
             className="closethat"
-            style={{ top: "10%", right: "3%" }}
+            style={{ top: "17%", right: "3%" }}
             onClick={handleSecondContainerClose}
           />
           <ArrowLeft
             className="closethat"
             style={{ top: "50%", left: "4%" }}
-            onClick={() => changeImage(selectedImage - 1)}
+            onClick={() => changeImageInGroup(selectedImageInGroup - 1)}
           />
           <ArrowRight
             className="closethat"
             style={{ top: "50%", right: "7%" }}
-            onClick={() => changeImage(selectedImage + 1)}
+            onClick={() => changeImageInGroup(selectedImageInGroup + 1)}
           />
+
           <img
             src="/ubasucac/Group 1.svg"
             style={{
               position: "absolute",
               zIndex: 4,
-              bottom: "7%",
+              bottom: "15%",
               left: "3%",
             }}
           />
