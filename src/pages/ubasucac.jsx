@@ -19,7 +19,7 @@ const Ubasucac = () => {
   const [selectedImage, setSelectedImage] = useState(1);
   const [selectedImageInGroup, setSelectedImageInGroup] = useState(1);
   const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true);
-  const [isSecondContainerVisible, setIsSecondContainerVisible] =useState(false);
+  const [isModalOpen, setIsSecondContainerVisible] =useState(false);
 
   const handleMouseEnter = (index) => {
     document.getElementById(`imagen${index}`).style.fill = "red";
