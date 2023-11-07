@@ -4,17 +4,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div style={{
-      transform: 'rotate(90deg)',
-      // transformOrigin: 'left top',
-      marginTop:'22vh',
-      marginLeft:'-50vw',
-      width: '100vh',
-      height: '100vw',
-      overflowX: 'hidden',
-      position: 'fixed',
-
-    }}>
+    <div>
       <Navbar />
       <div className="about-content-container">
         <div className="about-container">
