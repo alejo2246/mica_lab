@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="navbar-list">
             <span className="navbar-item">
               <div className="menu-item">
-                <Link href="/ubasucac" style={{ color: "red" }}>
+                <Link href="#" style={{ color: "red" }}>
                   FUECHY{" "}
                   <img
                     src="/flecha.svg"
@@ -36,6 +36,9 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link href="/quyca">QUYCA</Link>
+                  </li>
+                  <li>
+                    <Link href="/hizqa">HIZQA SAASBISA</Link>
                   </li>
                 </ul>
               </div>
