@@ -13,7 +13,7 @@
   padding: 0;
   margin: 0;
 }
-
+/* 
 @media only screen and (max-width: 1023px) {
   body {
     transform: rotate(90deg);
@@ -24,7 +24,7 @@
     top: 0;
     left: 0;
   }
-}
+} */
 body {
   color: rgb(var(--foreground-color));
   background: var(--background-color);
@@ -94,6 +94,11 @@ a {
   margin-left: -6.5%;
 }
 
+
+.selected {
+  color: red;
+}
+
 .sub-menu li {
   list-style-type: none;
   text-align: center;
@@ -132,7 +137,7 @@ a {
   margin-top: 5%;
   color: red;
   font-family: Prive;
-  font-size: 25px;
+  font-size: 35px;
 }
 .image-container {
   display: flex;
@@ -160,8 +165,16 @@ a {
 .chicubun-title {
   font-size: 70px;
   color: red;
-  margin-bottom: 2%;
   font-family: Prive;
+}
+.subtie{
+  font-family: Prive;
+  font-size: 35px;
+  font-weight: 400;
+  text-align: center;
+  color: #3C0D20;
+  margin-bottom: 3%;
+
 }
 
 .chicubun-subtitle {

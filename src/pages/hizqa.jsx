@@ -41,6 +41,7 @@ const hizqa = () => {
       <Navbar />
       <div className="chicubun-container">
         <h1 className="chicubun-title">HIZQA SAASBISA</h1>
+        <h2 className="subtie">[Medicina ancestral]</h2>
         <h2 className="chicubun-subtitle">
           Para mejorar esta experiencia, usa tus audífonos y da click en las
           diferentes imágenes

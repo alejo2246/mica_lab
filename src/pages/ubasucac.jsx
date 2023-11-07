@@ -110,6 +110,7 @@ const Ubasucac = () => {
         <Navbar />
         <div className="chicubun-container">
           <h1 className="chicubun-title">UBASUCAC AGUENÉ</h1>
+          <h2 className="subtie">[Memoria]</h2>
           <h2 className="chicubun-subtitle">
             de click sobre la línea de tiempo o <br />
             sobre para visualizar la info cartográfica

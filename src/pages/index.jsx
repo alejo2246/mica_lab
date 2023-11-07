@@ -7,6 +7,7 @@ import LeftCircle from "@/components/animation/LeftCircle";
 import RightCircle from "@/components/animation/RightCircle";
 import YellowCircle from "@/components/animation/YellowCircle";
 import TextImage from "@/components/animation/TextImage";
+import Text from "@/components/animation/text";
 import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -52,7 +53,7 @@ export default function Home() {
           height: "100vh",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+
         }}
       >
         <div className="circle-container" onClick={handleClick}>
@@ -63,9 +64,15 @@ export default function Home() {
           <YellowCircle />
           <TextImage />
         </div>
-
         <audio ref={audioRef} src="./audios/INSTRUMENTOS.mp3" />
+        <div style={{position:'absolute',
+          justifyContent: "center",
+          left:'44%',
+          bottom:'10%'}}>        
+          <Text />
+        </div>
       </div>
+
     </>
   );
 }

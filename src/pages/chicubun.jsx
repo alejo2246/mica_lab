@@ -44,6 +44,7 @@ const chicubun = () => {
       <Navbar />
       <div className="chicubun-container">
         <h1 className="chicubun-title">CHICUBUN</h1>
+        <h2 className="subtie">[Nuestras palabras]</h2>
         <h2 className="chicubun-subtitle">
           Para mejorar esta experiencia, usa tus audífonos y da click en las
           diferentes imágenes
