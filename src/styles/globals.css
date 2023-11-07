@@ -14,17 +14,7 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 1023px) {
-  body {
-    transform: rotate(90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
+
 body {
   color: rgb(var(--foreground-color));
   background: var(--background-color);
