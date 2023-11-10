@@ -29,10 +29,9 @@ export default function Home() {
     audioRef.current.play();
   };
 
-  
   useEffect(() => {
     const redirectionTimeout = setTimeout(() => {
-      router.push('/home', undefined, { shallow: true });
+      router.push("/home", undefined, { shallow: true });
     }, 5000);
     return () => clearTimeout(redirectionTimeout);
   }, []);
@@ -69,3 +68,88 @@ export default function Home() {
     </>
   );
 }
+/*export default function Home() {
+  const router = useRouter();
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const [hideCircle, setHideCircle] = useState(false);
+
+  const audioRef = React.useRef(null);
+  const handleClick = () => {
+    if (!animationStarted) {
+      animate();
+    }
+  };
+  const animate = async () => {
+    setAnimationStarted(true);
+    setTimeout(() => {
+      setHideCircle(true);
+    }, 4000);
+    setTimeout(() => {
+      router.push("/home", undefined, { shallow: true });
+    }, 5000);
+    audioRef.current.volume = 0.1;
+    audioRef.current.play();
+  };
+
+  // useEffect(() => {
+  //   const redirectionTimeout = setTimeout(() => {
+  //     router.push('/home', undefined, { shallow: true });
+  //   }, 5000);
+  //   return () => clearTimeout(redirectionTimeout);
+  // }, []);
+
+  return (
+    <>
+      <Head>
+        <title>Mica lab</title>
+        <meta name="description" content="Mica lab web" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div
+        className={styles.animationContainer}
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+        onClick={handleClick}
+      >
+        <div className="circle-container">
+          <div className="circle">
+            <LeftCircle start={animationStarted} />
+            <RightCircle start={animationStarted} />
+          </div>
+          <Image
+            src={yellowCircleImage}
+            alt="Yellow Circle"
+            width={206}
+            height={213}
+            style={{
+              opacity: hideCircle ? "0" : "1",
+              transition: "opacity 1s ease",
+              transform: "translateX(135px)",
+            }}
+          />
+          
+          <Image
+            src={textImage}
+            alt="Mica Lab"
+            width={700}
+            height={75}
+            style={{
+              opacity: hideCircle ? "1" : "0",
+              transition: "opacity 1s ease",
+              transform: "translateX(-310px)",
+            }}
+          />
+        </div>
+
+        <audio ref={audioRef} src="./audios/INSTRUMENTOS.mp3" />
+      </div>
+    </>
+  );
+}*/
