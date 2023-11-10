@@ -6,6 +6,7 @@ const quyca = () => {
       <Navbar />
       <div className="content-container">
         <h1 className="title-text title-bold">QUYCA</h1>
+        <h2 className="subtie">[Territorio]</h2>
       </div>
       <div className="image-container">
           <img src="/quyca.png" alt="Your Image" className="responsive-image" />
