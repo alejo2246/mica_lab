@@ -3,11 +3,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import MapeoColectivo from "@/components/chicubun/MapeoColectivo";
 import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
+import React, {useRef, useEffect, useState } from "react";
 
-const chicubun = () => {
-  const audioRef = React.useRef(null);
-  const hasMounted = React.useRef(false);
+const Chicubun = () => {
+  const audioRef = useRef(null);
+  const hasMounted = useRef(false);
   const [openMap, setOpenMap] = useState(false);
 
   const handleClose = () => {
@@ -94,4 +94,4 @@ const chicubun = () => {
   );
 };
 
-export default chicubun;
+export default Chicubun;

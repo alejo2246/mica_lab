@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import React, { useEffect } from "react";
 
-const hizqa = () => {
+const Hizqa = () => {
   const audioRef = React.useRef(null);
   const hasMounted = React.useRef(false);
   useEffect(() => {
@@ -67,4 +67,4 @@ const hizqa = () => {
   );
 };
 
-export default hizqa;
+export default Hizqa;
