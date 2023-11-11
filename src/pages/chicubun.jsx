@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import MapeoColectivo from "@/components/chicubun/MapeoColectivo";
 import Image from "next/image";
 
-import React, {useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const Chicubun = () => {
   const audioRef = useRef(null);
@@ -46,7 +46,7 @@ const Chicubun = () => {
       image.className = "imageInte";
       image.classList.add("grayFilter");
       image.classList.add("imageMapeo");
-      image.src = "./interaccion_BN/MAPEO COLECTIVO.PNG";
+      image.src = "./interaccion_BN/MAPEO COLECTIVO.png";
       imageContainer.appendChild(image);
 
       const btnMapa = document.querySelector(".imageMapeo");
@@ -69,27 +69,27 @@ const Chicubun = () => {
     <div className="menu1bolt">
       <Navbar />
       <div className="menuprueba">
-      <div className="chicubun-container">
-        <h1 className="chicubun-title">CHICUBUN</h1>
-        <h2 className="subtie">[Nuestras palabras]</h2>
-        <h2 className="chicubun-subtitle">
-          Para mejorar esta experiencia, usa tus audífonos y da click en las
-          diferentes imágenes
-        </h2>
+        <div className="chicubun-container">
+          <h1 className="chicubun-title">CHICUBUN</h1>
+          <h2 className="subtie">[Nuestras palabras]</h2>
+          <h2 className="chicubun-subtitle">
+            Para mejorar esta experiencia, usa tus audífonos y da click en las
+            diferentes imágenes
+          </h2>
+        </div>
+        <div className="imageContainer" id="image-container">
+          <img
+            src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.png"
+            alt="Your Image"
+            className="image_button"
+            style={{ mixBlendMode: "multiply" }}
+          />
+        </div>
+        <audio ref={audioRef} src="" />
+        <Modal isOpen={openMap} onClose={handleClose}>
+          <MapeoColectivo />
+        </Modal>
       </div>
-      <div className="imageContainer" id="image-container">
-        <img
-          src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.PNG"
-          alt="Your Image"
-          className="image_button"
-          style={{ mixBlendMode: "multiply" }}
-        />
-      </div>
-      <audio ref={audioRef} src="" />
-      <Modal isOpen={openMap} onClose={handleClose}>
-        <MapeoColectivo />
-      </Modal>
-    </div>
     </div>
   );
 };
