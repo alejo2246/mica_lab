@@ -19,7 +19,7 @@ const Ubasucac = () => {
   const [selectedImage, setSelectedImage] = useState(1);
   const [selectedImageInGroup, setSelectedImageInGroup] = useState(1);
   const [isFirstContainerVisible, setIsFirstContainerVisible] = useState(true);
-  const [isModalOpen, setIsSecondContainerVisible] = useState(false);
+  const [isModalOpen, setIsSecondContainerVisible] =useState(false);
 
   const handleMouseEnter = (index) => {
     document.getElementById(`imagen${index}`).style.fill = "red";
@@ -56,16 +56,18 @@ const Ubasucac = () => {
 
   const changeImageInGroup = (newIndex) => {
     const maxImagesInGroup = getMaxImagesInGroup(selectedImage);
-
+  
     if (newIndex >= 1 && newIndex <= maxImagesInGroup) {
       setSelectedImageInGroup(newIndex);
     } else if (newIndex < 1) {
+
       const previousDate = selectedImage - 1;
       if (previousDate >= 1) {
         setSelectedImage(previousDate);
         setSelectedImageInGroup(getMaxImagesInGroup(previousDate));
       }
     } else {
+
       const nextDate = selectedImage + 1;
       if (nextDate <= fechas.length) {
         setSelectedImage(nextDate);
@@ -73,7 +75,8 @@ const Ubasucac = () => {
       }
     }
   };
-
+  
+  
   const getMaxImagesInGroup = (selectedDate) => {
     const maxImagesPerDate = {
       1: 3,
@@ -93,11 +96,22 @@ const Ubasucac = () => {
     setIsSecondContainerVisible(true);
   };
 
+
+
   const handleSecondContainerClose = () => {
     setIsFirstContainerVisible(true);
     setIsSecondContainerVisible(false);
   };
 
+  const [modalAbierto, setModalAbierto] = useState(false);
+
+  const manejarClicEnImagen = () => {
+    setModalAbierto(true);
+  };
+
+  const cerrarModal = () => {
+    setModalAbierto(false);
+  };
 
   return (
     <>
@@ -200,7 +214,7 @@ const Ubasucac = () => {
             src="/ubasucac/union3.svg"
             style={{
               position: "absolute",
-              top: "0.3%",
+              top: '0.3%',
               left: "-0.8%",
               width: "100%",
               height: "100%",
@@ -230,11 +244,27 @@ const Ubasucac = () => {
               zIndex: 3,
             }}
           >
-          <img
-            src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
-            style={{ height: "100%" }}
-            alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
-          />
+          <div className="menusecond2" style={{ overflow: "hidden", maxWidth: "1100px",maxHeight:'500px', margin: "0 0",  boxSizing: "border-box" }}>
+            <img
+              // src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
+              src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
+              onClick={manejarClicEnImagen}
+            />
+          </div>
+          {modalAbierto && (
+            <div className="modal-overlay" onClick={cerrarModal}>
+              <div className="modal2" >
+                <img
+                  src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
+                  style={{ width: "100%", height: "auto",maxHeight:'700px', display: "block" }}
+                  alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
+                />
+              </div>
+            </div>
+          )}
+
           </div>
           <CloseButton
             className="closethat"
