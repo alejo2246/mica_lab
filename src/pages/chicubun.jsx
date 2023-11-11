@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import React, {useRef, useEffect, useState } from "react";
 
-const chicubun = () => {
+const Chicubun = () => {
   const audioRef = useRef(null);
   const hasMounted = useRef(false);
   const [openMap, setOpenMap] = useState(false);
@@ -94,4 +94,4 @@ const chicubun = () => {
   );
 };
 
-export default chicubun;
+export default Chicubun;
