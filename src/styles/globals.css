@@ -509,7 +509,6 @@ a {
   right: 325px;
   position: absolute;
 }
-
 .hetlink3{
   transition: opacity 2s ease-in;
   width: 130px;
@@ -583,7 +582,7 @@ a {
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-@media (max-width: 1000px) {
+@media (max-width: 450px) {
   .menu1bolt {
     transform: rotate(90deg);
     margin-top: 25vh;
