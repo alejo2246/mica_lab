@@ -40,8 +40,9 @@ const chicubun = () => {
   }, null);
 
   return (
-    <div>
+    <div className="menu1bolt">
       <Navbar />
+      <div className="menuprueba">
       <div className="chicubun-container">
         <h1 className="chicubun-title">CHICUBUN</h1>
         <h2 className="subtie">[Nuestras palabras]</h2>
@@ -64,6 +65,7 @@ const chicubun = () => {
         />
       </div>
       <audio ref={audioRef} src="" />
+    </div>
     </div>
   );
 };

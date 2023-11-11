@@ -17,6 +17,7 @@ const HomePage = () => {
   }, []);
 
   return (
+    <div className="menu1bolt">
     <div
       style={{
         display: "flex",
@@ -65,15 +66,10 @@ const HomePage = () => {
             }}
           />
           <Link
+          className="hetlink4"
             href="/hizqa"
             style={{
               opacity: showGif ? 0 : 1,
-              transition: "opacity 2s ease-in",
-              width: "210px",
-              height: "100px",
-              top: "360px",
-              left: "65px",
-              position: "absolute",
             }}
           >
             <div
@@ -96,15 +92,10 @@ const HomePage = () => {
             </div>
           </Link>
           <Link
+            className="hetlink"
             href="/quyca"
             style={{
               opacity: showGif ? 0 : 1,
-              transition: "opacity 2s ease-in",
-              width: "130px",
-              height: "50px",
-              top: "720px",
-              left: "55px",
-              position: "absolute",
             }}
           >
             <div
@@ -126,15 +117,10 @@ const HomePage = () => {
             </div>
           </Link>
           <Link
+            className="hetlink2"
             href="/chicubun"
             style={{
               opacity: showGif ? 0 : 1,
-              transition: "opacity 2s ease-in",
-              width: "130px",
-              height: "50px",
-              top: "560px",
-              right: "325px",
-              position: "absolute",
             }}
           >
             <div
@@ -156,15 +142,11 @@ const HomePage = () => {
             </div>
           </Link>
           <Link
+            className="hetlink3"
             href="/ubasucac"
             style={{
               opacity: showGif ? 0 : 1,
-              transition: "opacity 2s ease-in",
-              width: "130px",
-              height: "50px",
-              top: "70px",
-              right: "200px",
-              position: "absolute",
+
             }}
           >
             <div
@@ -187,6 +169,7 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };

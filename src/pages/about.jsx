@@ -4,13 +4,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
+    <div className="menu1bolt">
       <Navbar />
       <div className="about-content-container">
         <div className="about-container">
         <div className="text-and-image-container">
           <div className="about-title">
-            <h1>Sobre<br /> El proyecto</h1>
+            <h3>Sobre<br /> El proyecto</h3>
           </div>
           
             <div className="about-columns">
@@ -23,7 +23,7 @@ const About = () => {
               </p>
 
               </div>
-              <div className="about-text" style={{marginLeft: '15%', maxWidth: '472px'}}>
+              <div className="about-text2" >
               <p>
 
                 Cuyo objetivo es la creación de un archivo de memoria-cartográfica de los territorios de El Salitre y la Hacienda Las Mercedes, ubicados en la localidad de Suba.<br /><br />

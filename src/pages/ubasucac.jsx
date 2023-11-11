@@ -9,10 +9,10 @@ import Modal from "@/components/Modal";
 
 const Ubasucac = () => {
   const downloadImage = () => {
-    const imageSrc = `/ubasucac/imagen_${selectedImage}.png`;
+    const imageSrc = `/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`;
     const downloadLink = document.createElement("a");
     downloadLink.href = imageSrc;
-    downloadLink.setAttribute("download", `imagen_${selectedImage}.png`);
+    downloadLink.setAttribute("download", `imagen_${selectedImageInGroup}_${selectedImage}.png`);
     downloadLink.click();
   };
   const [indicatorOffset, setIndicatorOffset] = useState(0);
@@ -80,11 +80,11 @@ const Ubasucac = () => {
   const getMaxImagesInGroup = (selectedDate) => {
     const maxImagesPerDate = {
       1: 3,
-      2: 2, 
-      3: 2,
-      4: 2,
-      5: 2,
-      6: 2,
+      2: 7, 
+      3: 1,
+      4: 4,
+      5: 4,
+      6: 12,
 
     };
     return maxImagesPerDate[selectedDate] || 0;
@@ -103,10 +103,20 @@ const Ubasucac = () => {
     setIsSecondContainerVisible(false);
   };
 
+  const [modalAbierto, setModalAbierto] = useState(false);
+
+  const manejarClicEnImagen = () => {
+    setModalAbierto(true);
+  };
+
+  const cerrarModal = () => {
+    setModalAbierto(false);
+  };
 
   return (
     <>
-      <div>
+    <div className="menu1bolt">
+      <div >
         <Navbar />
         <div className="chicubun-container">
           <h1 className="chicubun-title">UBASUCAC AGUENÉ</h1>
@@ -234,11 +244,27 @@ const Ubasucac = () => {
               zIndex: 3,
             }}
           >
-          <img
-            src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
-            style={{ height: "100%" }}
-            alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
-          />
+          <div className="menusecond2" style={{ overflow: "hidden", maxWidth: "1100px",maxHeight:'500px', margin: "0 0",  boxSizing: "border-box" }}>
+            <img
+              // src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
+              src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
+              onClick={manejarClicEnImagen}
+            />
+          </div>
+          {modalAbierto && (
+            <div className="modal-overlay" onClick={cerrarModal}>
+              <div className="modal2" >
+                <img
+                  src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
+                  style={{ width: "100%", height: "auto",maxHeight:'700px', display: "block" }}
+                  alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
+                />
+              </div>
+            </div>
+          )}
+
           </div>
           <CloseButton
             className="closethat"
@@ -260,18 +286,23 @@ const Ubasucac = () => {
             src="/ubasucac/Group 1.svg"
             style={{
               position: "absolute",
-              zIndex: 4,
+              zIndex: 2,
               bottom: "15%",
               left: "3%",
             }}
           />
 
-          <div onClick={downloadImage} className="buttonDownload">
+          <div onClick={downloadImage} className="buttonDownload"          
+            style={{
+              position: "absolute",
+              zIndex: 2,
+            }}>
             <Download className="downloadIcon" />
             <p className="textcontainer">Descarga la imagen acá</p>
           </div>
         </div>
       </Modal>
+      </div>
     </>
   );
 };

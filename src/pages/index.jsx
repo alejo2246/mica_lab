@@ -46,7 +46,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className="menu1bolt12">
       <div
         className={styles.animationContainer}
         style={{
@@ -71,6 +71,7 @@ export default function Home() {
           bottom:'10%'}}>        
           <Text />
         </div>
+      </div>
       </div>
 
     </>

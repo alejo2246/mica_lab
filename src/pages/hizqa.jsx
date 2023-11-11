@@ -37,8 +37,9 @@ const hizqa = () => {
     }
   }, null);
   return (
-    <div>
+    <div className="menu1bolt">
       <Navbar />
+      <div className="menuprueba">
       <div className="chicubun-container">
         <h1 className="chicubun-title">HIZQA SAASBISA</h1>
         <h2 className="subtie">[Medicina ancestral]</h2>
@@ -61,6 +62,7 @@ const hizqa = () => {
         />
       </div>
       <audio ref={audioRef} src="" />
+    </div>
     </div>
   );
 };

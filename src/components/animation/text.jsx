@@ -5,11 +5,11 @@ const Text = () => {
     return (
       <motion.div
         className="text"
-        initial={{ opacity: 0 ,x:-310}}
-        animate={{ opacity: 1,x:-310 }} // aparece cuando el círculo amarillo se desvanece
+        initial={{ opacity: 0 ,x:-140, y:210}}
+        animate={{ opacity: 1,x:-140,y:210 }} // aparece cuando el círculo amarillo se desvanece
         transition={{ duration: 0, delay: 4 }}
       >
-        <Image src={textImage} alt="Mica Lab" width={'960px'} height={'103px'} />
+        <Image className="imageani5" src={textImage} alt="Mica Lab"/>
       </motion.div>
     );
   };
