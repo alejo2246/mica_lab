@@ -15,13 +15,18 @@ const About = () => {
           
             <div className="about-columns">
               <div className="about-text">
-              <p>
-                MICA LAB es una iniciativa transmedia articulada al proyecto de investigación <br />
-                <span style={{ color: 'red' }}>EL CAMINAR DE LAS PLANTAS - CARTOGRÁFIAS DE MEMORIA.</span>
-                <br /><br />
-                Ganador de la Beca de investigación en Arte, Ciencia y Tecnología, otorgada por el Instituto Distrital de las Artes 2023 (IDARTES).
-              </p>
-
+                <p>
+                  MICA LAB es una iniciativa transmedia articulada al proyecto
+                  de investigación <br />
+                  <span style={{ color: "red" }}>
+                    EL CAMINAR DE LAS PLANTAS - CARTOGRÁFIAS DE MEMORIA.
+                  </span>
+                  <br />
+                  <br />
+                  Ganador de la Beca de investigación en Arte, Ciencia y
+                  Tecnología, otorgada por el Instituto Distrital de las Artes
+                  2023 (IDARTES).
+                </p>
               </div>
               <div className="about-text2" >
               <p>

@@ -4,6 +4,7 @@
   position: relative;
   width: 1085px;
   height: 878px;
+  margin: auto;
 }
 
 .imageInte {
@@ -13,7 +14,13 @@
   left: 0;
   mix-blend-mode: multiply;
 }
-
+.showFirst {
+  z-index: 99;
+}
+.imageInte:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+}
 .grayFilter {
   filter: grayscale(100%);
 }

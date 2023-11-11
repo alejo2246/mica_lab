@@ -1,11 +1,18 @@
+import Modal from "@/components/Modal2";
 import Navbar from "@/components/Navbar/Navbar";
+import MapeoColectivo from "@/components/chicubun/MapeoColectivo";
 import Image from "next/image";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const chicubun = () => {
   const audioRef = React.useRef(null);
   const hasMounted = React.useRef(false);
+  const [openMap, setOpenMap] = useState(false);
+
+  const handleClose = () => {
+    setOpenMap(false);
+  };
   useEffect(() => {
     if (!hasMounted.current) {
       const imageContainer = document.getElementById("image-container");
@@ -35,6 +42,25 @@ const chicubun = () => {
           audioRef.current.play();
         });
       }
+      const image = document.createElement("img");
+      image.className = "imageInte";
+      image.classList.add("grayFilter");
+      image.classList.add("imageMapeo");
+      image.src = "./interaccion_BN/MAPEO COLECTIVO.PNG";
+      imageContainer.appendChild(image);
+
+      const btnMapa = document.querySelector(".imageMapeo");
+      btnMapa.addEventListener("mouseenter", () => {
+        btnMapa.classList.remove("grayFilter");
+      });
+
+      btnMapa.addEventListener("mouseleave", () => {
+        btnMapa.classList.add("grayFilter");
+        audioRef.current.pause();
+      });
+      btnMapa.addEventListener("click", () => {
+        setOpenMap(true);
+      });
       hasMounted.current = true;
     }
   }, null);
@@ -53,18 +79,16 @@ const chicubun = () => {
       </div>
       <div className="imageContainer" id="image-container">
         <img
-          src="./interaccion_BN/MAPEO COLECTIVO.PNG"
-          alt="Your Image"
-          className="imageInte grayFilter imageMapeo"
-        />
-        <img
           src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.PNG"
           alt="Your Image"
-          className=""
+          className="image_button"
           style={{ mixBlendMode: "multiply" }}
         />
       </div>
       <audio ref={audioRef} src="" />
+      <Modal isOpen={openMap} onClose={handleClose}>
+        <MapeoColectivo />
+      </Modal>
     </div>
     </div>
   );
