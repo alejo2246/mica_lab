@@ -6,7 +6,7 @@ const LeftCircle = ({ start }) => {
     <motion.div
       className="circle"
       initial={{ opacity: 1, x: 450 }}
-      animate={{ opacity: 1, x: start ? 110 : 450 }}
+      animate={{ opacity: 1, x: start ? 110 : 110 }}
       transition={{ duration: 4 }}
     >
       <Image src={leftCircleImage} alt="Left Circle" width={214} height={440} />

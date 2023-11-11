@@ -6,7 +6,7 @@ const RightCircle = ({ start }) => {
     <motion.div
       className="circle"
       initial={{ opacity: 1, x: 450 }}
-      animate={{ opacity: 1, x: start ? 790 : 450 }} // ajusta el valor de x para separar el círculo
+      animate={{ opacity: 1, x: start ? 790 : 790 }} // ajusta el valor de x para separar el círculo
       transition={{ duration: 4 }}
     >
       <Image

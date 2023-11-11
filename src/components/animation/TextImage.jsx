@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import textImage from "../../../public/textImage.png";
 import { motion } from "framer-motion";
 const TextImage = () => {
   return (

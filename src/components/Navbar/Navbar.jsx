@@ -24,10 +24,19 @@ const Navbar = () => {
         <div className="navbar-right">
           <div className="navbar-list">
             <span className="navbar-item">
-              <div className={`menu-item ${selectedLink === "FUECHY" ? "selected" : ""}`}>
-                <Link href="#" className="buttom12" onClick={() => handleLinkClick("FUECHY")}>
+              <div
+                className={`menu-item ${
+                  selectedLink === "FUECHY" ? "selected" : ""
+                }`}
+              >
+                <Link
+                  href="#"
+                  className="buttom12"
+                  onClick={() => handleLinkClick("FUECHY")}
+                >
                   FUECHY{" "}
-                  <img className="hola"
+                  <img
+                    className="hola"
                     src="/flecha.svg"
                     alt="Descripción del SVG"
                     width="16"
@@ -36,25 +45,73 @@ const Navbar = () => {
                 </Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link href="/ubasucac" className={`navbar-link ${selectedLink === "UBASUCAC" ? "selected" : ""}`} onClick={() => handleLinkClick("UBASUCAC")}>UBASUCAC AGUENÉ</Link>
+                    <Link
+                      href="/ubasucac"
+                      className={`navbar-link ${
+                        selectedLink === "UBASUCAC" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("UBASUCAC")}
+                    >
+                      UBASUCAC AGUENÉ
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/chicubun" className={`navbar-link ${selectedLink === "CHICUBUN" ? "selected" : ""}`} onClick={() => handleLinkClick("CHICUBUN")}>CHICUBUN</Link>
+                    <Link
+                      href="/chicubun"
+                      className={`navbar-link ${
+                        selectedLink === "CHICUBUN" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("CHICUBUN")}
+                    >
+                      CHICUBUN
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/quyca" className={`navbar-link ${selectedLink === "QUYCA" ? "selected" : ""}`} onClick={() => handleLinkClick("QUYCA")}>QUYCA</Link>
+                    <Link
+                      href="/quyca"
+                      className={`navbar-link ${
+                        selectedLink === "QUYCA" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("QUYCA")}
+                    >
+                      QUYCA
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/hizqa" className={`navbar-link ${selectedLink === "HIZQA" ? "selected" : ""}`} onClick={() => handleLinkClick("HIZQA")}>HIZQA SAASBISA</Link>
+                    <Link
+                      href="/hizqa"
+                      className={`navbar-link ${
+                        selectedLink === "HIZQA" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("HIZQA")}
+                    >
+                      HIZQA SAASBISA
+                    </Link>
                   </li>
                 </ul>
               </div>
             </span>
             <span className="navbar-item">
-              <Link href="/about" className={`navbar-link ${selectedLink === "SOBRE EL PROYECTO" ? "selected" : ""}`} onClick={() => handleLinkClick("SOBRE EL PROYECTO")}>SOBRE EL PROYECTO</Link>
+              <Link
+                href="/about"
+                className={`navbar-link ${
+                  selectedLink === "SOBRE LA INICIATIVA" ? "selected" : ""
+                }`}
+                onClick={() => handleLinkClick("SOBRE LA INICIATIVA")}
+              >
+                SOBRE LA INICIATIVA
+              </Link>
             </span>
             <span className="navbar-item">
-              <Link href="/credits" className={`navbar-link ${selectedLink === "CRÉDITOS" ? "selected" : ""}`} onClick={() => handleLinkClick("CRÉDITOS")}>CRÉDITOS</Link>
+              <Link
+                href="/credits"
+                className={`navbar-link ${
+                  selectedLink === "CRÉDITOS" ? "selected" : ""
+                }`}
+                onClick={() => handleLinkClick("CRÉDITOS")}
+              >
+                CRÉDITOS
+              </Link>
             </span>
           </div>
         </div>
