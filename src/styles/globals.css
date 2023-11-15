@@ -498,8 +498,8 @@ a {
   transition: opacity 2s ease-in;
   width: 130px;
   height: 50px;
-  top: 720px;
-  left: 55px;
+  top: 85%;
+  left: 13%;
   position: absolute;
 }
 
@@ -507,24 +507,24 @@ a {
   transition: opacity 2s ease-in;
   width: 130px;
   height: 50px;
-  top: 560px;
-  right: 170px;
+  top: 69%;
+  right: 20%;
   position: absolute;
 }
 .hetlink3 {
   transition: opacity 2s ease-in;
   width: 130px;
   height: 50px;
-  top: 70px;
-  right: 40px;
+  top: 8%;
+  right: 11%;
   position: absolute;
 }
 .hetlink4 {
   transition: opacity 2s ease-in;
   width: 210px;
   height: 100px;
-  top: 360px;
-  left: 65px;
+  top: 42%;
+  left: 10%;
   position: absolute;
 }
 .hamburger-menu {

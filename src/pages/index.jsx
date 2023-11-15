@@ -8,14 +8,16 @@ import RightCircle from "@/components/animation/RightCircle";
 import YellowCircle from "@/components/animation/YellowCircle";
 import TextImage from "@/components/animation/TextImage";
 import { useRouter } from "next/router";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { getProjects } from "../../sanity/sanity-utils";
+import GifContext from "@/context/GifContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
   const [animationStarted, setAnimationStarted] = useState(false);
-
+  const { setGifUrl } = useContext(GifContext);
   const audioRef = React.useRef(null);
   const handleClick = () => {
     if (!animationStarted) {
@@ -30,6 +32,17 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const projectsData = await getProjects();
+        setGifUrl(projectsData[0].image);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    // Llamar a la función para cargar datos
+    fetchData();
     const redirectionTimeout = setTimeout(() => {
       router.push("/home", undefined, { shallow: true });
     }, 5000);

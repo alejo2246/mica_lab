@@ -8,11 +8,14 @@ const About = () => {
       <Navbar />
       <div className="about-content-container">
         <div className="about-container">
-        <div className="text-and-image-container">
-          <div className="about-title">
-            <h3>Sobre<br /> El proyecto</h3>
-          </div>
-          
+          <div className="text-and-image-container">
+            <div className="about-title">
+              <h3>
+                Sobre
+                <br /> El proyecto
+              </h3>
+            </div>
+
             <div className="about-columns">
               <div className="about-text">
                 <p>
@@ -22,19 +25,44 @@ const About = () => {
                     EL CAMINAR DE LAS PLANTAS - CARTOGRÁFIAS DE MEMORIA.
                   </span>
                   <br />
+                  Ganador de la Beca de investigación en arte, tecnología y
+                  ancestralidad, otorgada por el Instituto Distrital de las
+                  Artes 2023 (IDARTES).
                   <br />
-                  Ganador de la Beca de investigación en Arte, Ciencia y
-                  Tecnología, otorgada por el Instituto Distrital de las Artes
-                  2023 (IDARTES).
+                  <br />
+                  Cuyo objetivo es la creación de un archivo de memoria
+                  cartográfico, situado en los territorios de el barrio El
+                  Salitre y La Hacienda las Mercedes en Suba. Esta iniciativa
+                  esta vinculada a los relatos de memoria del sabedor y medico
+                  ancestral de la comunidad Muysca de Suba, José Ignacio Rozo.
+                  <br />
+                  <br />
+                  Se busca fortalecer el acceso a material archivístico
+                  cartográfico para la comunidad. Suscitando a su consulta y uso
+                  en diferentes escenarios de activación.
                 </p>
               </div>
-              <div className="about-text2" >
-              <p>
-
-                Cuyo objetivo es la creación de un archivo de memoria-cartográfica de los territorios de El Salitre y la Hacienda Las Mercedes, ubicados en la localidad de Suba.<br /><br />
-                Una experiencia que conecta la relatoría propia de los cambios espaciales de los territorios de Suba, como testigo del asentamiento y permanencia de los herederos del antiguo resguardo Muysca de Suba.
-              </p>
-
+              <div className="about-text2">
+                <p>
+                  Esta experiencia conecta el tejido construido a través de los
+                  relatos colectivos, de los cambios espaciales del territorio
+                  de Suba. Como testimonio del asentamiento y permanencia de los
+                  herederos del antiguo resguardo Muysca de Suba.
+                  <br />
+                  <br />
+                  Agradecemos la colaboración de los archivos (Archivo General
+                  de la Nación, Planoteca de la secretaria de Planeación,
+                  Archivo Central de Predios, Archivo de Bogotá, Mapas de
+                  Colombia IGAC, Mapas de Bogotá (Proyecto web de cartografía
+                  histórica de la Universidad Nacional de Colombia) y Archivo
+                  digital del Banco de la Republica).
+                  <br />
+                  <br />A su vez, al Instituto Distrital de las Artes (IDARTES),
+                  a la línea de Arte, Ciencia y Tecnología, por su
+                  acompañamiento y otorgar este estimulo. Por otro lado, a los
+                  cabildantes de los territorios de el barrio EL Salitre y Tuna
+                  Baja, por la participación en este proceso.
+                </p>
               </div>
             </div>
             <div className="about-image-container">

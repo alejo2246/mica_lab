@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Typography from "./Typography";
 import { useState } from "react";
+import { cloneUniformsGroups } from "three";
 
 const Navbar = () => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -20,14 +21,17 @@ const Navbar = () => {
   return (
     <nav>
       <div className="navbar-container">
-        <div className="navbar-left">
-          <Link href="/home">
-            <div className="navbar-logo">
-              <Image src="/icons/logo.svg" alt="Logo" width={53} height={49} />
-            </div>
-          </Link>
+        <Link
+          href="/home"
+          className="navbar-left"
+          style={{ cursor: "pointer" }}
+        >
+          <div className="navbar-logo">
+            <Image src="/icons/logo.svg" alt="Logo" width={53} height={49} />
+          </div>
           <Typography text="MICA LAB" sx={"hola"} />
-        </div>
+        </Link>
+
         <div className={`navbar-right ${showMenu ? "show-menu" : ""}`}>
           <div className="navbar-list">
             <span className="navbar-item">
