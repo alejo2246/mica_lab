@@ -603,19 +603,11 @@ a {
     width: 90%;
   }
 }
-@media (max-width: 450px) {
-  .menu1bolt {
-    transform: rotate(90deg);
-    margin-top: 25vh;
-    margin-left: -60vw;
-    width: 100vh;
-    height: 115vw;
-    overflow-x: hidden;
-    position: fixed;
-  }
+@media (max-width: 1000px) {
+
   .circleLineTime{
     margin-left: 8%;
-    margin-right: -9%;
+    margin-right: -8.5%;
   }
   .espiral{
     width: 75%;
@@ -676,7 +668,6 @@ a {
     display: block;
     justify-content: center;
     align-items: center;
-    margin-left: -5%;
   }
 
   .imageContainer {
