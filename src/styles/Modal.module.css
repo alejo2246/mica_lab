@@ -25,12 +25,3 @@
   margin: 20px;
   position: relative;
 }
-.closeButton {
-  position: absolute;
-  right: 15px;
-  z-index: 99;
-  font-size: 80px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
