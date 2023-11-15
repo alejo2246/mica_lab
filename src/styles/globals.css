@@ -144,19 +144,19 @@ a {
   align-items: center;
 }
 
-.images-container{
+.images-container {
   position: relative;
   max-width: 1220px;
   max-height: 1510px;
-  margin: 0 auto; 
+  margin: 0 auto;
   border: 1px solid black;
 }
 
 .responsive-image {
   position: absolute;
-  max-width: 100%; 
+  max-width: 100%;
   width: auto;
-  height: auto; 
+  height: auto;
 }
 
 .chicubun-container {
@@ -582,29 +582,29 @@ a {
   color: red;
 }
 
-.menu3respon{
+.menu3respon {
   position: absolute;
   bottom: 28%;
   left: 4%;
   width: 98%;
   height: 100%;
-  max-Height: 500px;
+  max-height: 500px;
   z-index: 3;
 }
-.espiral{
+.espiral {
   width: 100%;
-  max-Width: 724px;
+  max-width: 724px;
   height: auto;
   margin-left: 10%;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media (max-width: 1340px) {
-  .menu3respon{
+  .menu3respon {
     width: 90%;
   }
 }
 @media (max-width: 450px) {
-  .menu1bolt {
+  /* .menu1bolt {
     transform: rotate(90deg);
     margin-top: 25vh;
     margin-left: -60vw;
@@ -612,18 +612,18 @@ a {
     height: 115vw;
     overflow-x: hidden;
     position: fixed;
-  }
-  .circleLineTime{
+  } */
+  .circleLineTime {
     margin-left: 8%;
     margin-right: -9%;
   }
-  .espiral{
+  .espiral {
     width: 75%;
   }
-  .menu3respon{
+  .menu3respon {
     bottom: -0%;
   }
-  .menusecond2{
+  .menusecond2 {
     width: 90%;
     height: 60%;
     margin-top: 10%;
@@ -631,11 +631,11 @@ a {
 
   .hamburger-menu {
     margin-right: 10vh;
-    display: block; 
+    display: block;
   }
 
   .navbar-right {
-    display: none; 
+    display: none;
   }
 
   .imageContainer {
@@ -645,7 +645,7 @@ a {
     margin-top: -10%;
   }
 
-  .menu1bolt12 {
+  /* .menu1bolt12 {
     transform: rotate(90deg);
     margin-top: 20vh;
     margin-left: 15vw;
@@ -653,7 +653,7 @@ a {
     height: 115vw;
 
     position: fixed;
-  }
+  } */
 
   .imageani1 {
     width: 115px;
