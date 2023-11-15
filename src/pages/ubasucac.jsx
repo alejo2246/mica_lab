@@ -248,7 +248,7 @@ const Ubasucac = () => {
             <img
 
               src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
-              style={{ marginBottom:'-10%',width: "100%", height: "auto", display: "block" ,position:'relative', zIndex: 4}}
+              style={{ marginBottom:'-15%',width: "100%", height: "auto", display: "block" ,position:'relative', zIndex: 4}}
               alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
               onClick={manejarClicEnImagen}
             />
