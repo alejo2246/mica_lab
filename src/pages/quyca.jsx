@@ -1,36 +1,146 @@
-import React, { useState, useEffect } from "react";
-import Navbar from '@/components/Navbar/Navbar';
+import React, { useState, useEffect, useRef } from "react";
+import Navbar from "@/components/Navbar/Navbar";
 
 const Quyca = () => {
+  const audioRef = useRef(null);
   const [images] = useState([
-    { id: 1, src: '/quyca/1.png', audio: '/quyca/audio/1.mp3', video: '/quyca/video/1.mp4' },
-    { id: 2, src: '/quyca/2.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4' },
-    { id: 3, src: '/quyca/3.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4'},
-    { id: 4, src: '/quyca/4.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4' },
-    { id: 5, src: '/quyca/5.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4'},
-    { id: 6, src: '/quyca/6.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4'},
-    { id: 7, src: '/quyca/7.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4' },
-    { id: 8, src: '/quyca/8.png', audio: '/quyca/audio/3.mp3', video: '/quyca/video/3.mp4' },
-    { id: 9, src: '/quyca/9.png', audio: '/quyca/audio/9.mp3', video: '/quyca/video/9.mp4' },
-    { id: 10, src: '/quyca/10.png', audio: '/quyca/audio/9.mp3', video: '/quyca/video/0.mp4' },
-    { id: 11, src: '/quyca/11.png', audio: '/quyca/audio/10.mp3', video: '/quyca/video/10.mp4' },
-    { id: 12, src: '/quyca/12.png', audio: '/quyca/audio/15.mp3', video: '/quyca/video/.mp4' },
-    { id: 13, src: '/quyca/13.png', audio: '/quyca/audio/11.mp3', video: '/quyca/video/12.mp4' },
-    { id: 14, src: '/quyca/14.png', audio: '/quyca/audio/14.mp3', video: '/quyca/video/12.mp4' },
-    { id: 15, src: '/quyca/15.png', audio: '/quyca/audio/14.mp3', video: '/quyca/video/12.mp4'},
-    { id: 16, src: '/quyca/16.png', audio: '/quyca/audio/16.mp3', video: '/quyca/video/.mp4'},
-    { id: 17, src: '/quyca/17.png', audio: '/quyca/audio/17.mp3', video: '/quyca/video/17.mp4'},
-    { id: 18, src: '/quyca/18.png', audio: '/quyca/audio/18.mp3', video: '/quyca/video/18.mp4' },
-    { id: 19, src: '/quyca/19.png', audio: '/quyca/audio/19.mp3', video: '/quyca/video/16.mp4' },
-    { id: 20, src: '/quyca/20.png', audio: '/quyca/audio/17.mp3', video: '/quyca/video/17.mp4'},
-    { id: 21, src: '/quyca/21.png', audio: '/quyca/audio/18.mp3', video: '/quyca/video/11.mp4'},
-    { id: 22, src: '/quyca/22.png', audio: '/quyca/audio/19.mp3', video: '/quyca/video/19.mp4' }
+    {
+      id: 1,
+      src: "/quyca/1.png",
+      audio: "/quyca/audio/1.mp3",
+      video: "/quyca/video/1.mp4",
+    },
+    {
+      id: 2,
+      src: "/quyca/2.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 3,
+      src: "/quyca/3.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 4,
+      src: "/quyca/4.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 5,
+      src: "/quyca/5.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 6,
+      src: "/quyca/6.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 7,
+      src: "/quyca/7.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 8,
+      src: "/quyca/8.png",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/3.mp4",
+    },
+    {
+      id: 9,
+      src: "/quyca/9.png",
+      audio: "/quyca/audio/9.mp3",
+      video: "/quyca/video/9.mp4",
+    },
+    {
+      id: 10,
+      src: "/quyca/10.png",
+      audio: "/quyca/audio/9.mp3",
+      video: "/quyca/video/0.mp4",
+    },
+    {
+      id: 11,
+      src: "/quyca/11.png",
+      audio: "/quyca/audio/10.mp3",
+      video: "/quyca/video/10.mp4",
+    },
+    {
+      id: 12,
+      src: "/quyca/12.png",
+      audio: "/quyca/audio/15.mp3",
+      video: "/quyca/video/.mp4",
+    },
+    {
+      id: 13,
+      src: "/quyca/13.png",
+      audio: "/quyca/audio/11.mp3",
+      video: "/quyca/video/12.mp4",
+    },
+    {
+      id: 14,
+      src: "/quyca/14.png",
+      audio: "/quyca/audio/14.mp3",
+      video: "/quyca/video/12.mp4",
+    },
+    {
+      id: 15,
+      src: "/quyca/15.png",
+      audio: "/quyca/audio/14.mp3",
+      video: "/quyca/video/12.mp4",
+    },
+    {
+      id: 16,
+      src: "/quyca/16.png",
+      audio: "/quyca/audio/16.mp3",
+      video: "/quyca/video/.mp4",
+    },
+    {
+      id: 17,
+      src: "/quyca/17.png",
+      audio: "/quyca/audio/17.mp3",
+      video: "/quyca/video/17.mp4",
+    },
+    {
+      id: 18,
+      src: "/quyca/18.png",
+      audio: "/quyca/audio/18.mp3",
+      video: "/quyca/video/18.mp4",
+    },
+    {
+      id: 19,
+      src: "/quyca/19.png",
+      audio: "/quyca/audio/19.mp3",
+      video: "/quyca/video/16.mp4",
+    },
+    {
+      id: 20,
+      src: "/quyca/20.png",
+      audio: "/quyca/audio/17.mp3",
+      video: "/quyca/video/17.mp4",
+    },
+    {
+      id: 21,
+      src: "/quyca/21.png",
+      audio: "/quyca/audio/18.mp3",
+      video: "/quyca/video/11.mp4",
+    },
+    {
+      id: 22,
+      src: "/quyca/22.png",
+      audio: "/quyca/audio/19.mp3",
+      video: "/quyca/video/19.mp4",
+    },
   ]);
 
-
   const [videoModalAbierto, setVideoModalAbierto] = useState(false);
-  const [videoSeleccionado, setVideoSeleccionado] = useState('');
-  const [audioSeleccionado, setAudioSeleccionado] = useState('');
+  const [videoSeleccionado, setVideoSeleccionado] = useState("");
+  const [audioSeleccionado, setAudioSeleccionado] = useState("");
 
   const reproducirContenido = async (id) => {
     const imagenSeleccionada = images.find((imagen) => imagen.id === id);
@@ -38,17 +148,18 @@ const Quyca = () => {
     if (imagenSeleccionada.video) {
       const videoExiste = await verificarRutaRecurso(imagenSeleccionada.video);
       if (videoExiste) {
+        audioRef.current.pause();
         setVideoSeleccionado(imagenSeleccionada.video);
         abrirVideoModal();
       }
     }
 
     if (imagenSeleccionada.audio) {
-      const audio = new Audio(imagenSeleccionada.audio);
-      audio.volume = 0.1;
-      
-      audio.play();
-      
+      audioRef.current.pause();
+      audioRef.current.src = imagenSeleccionada.audio;
+      audioRef.current.volume = 0.1;
+      audioRef.current.play();
+
       setAudioSeleccionado(imagenSeleccionada.audio);
     }
   };
@@ -59,7 +170,7 @@ const Quyca = () => {
 
   const cerrarVideoModal = () => {
     setVideoModalAbierto(false);
-    setVideoSeleccionado('');
+    setVideoSeleccionado("");
   };
 
   const verificarRutaRecurso = async (ruta) => {
@@ -106,6 +217,7 @@ const Quyca = () => {
           </div>
         </div>
       )}
+      <audio ref={audioRef} src="" />
     </div>
   );
 };
