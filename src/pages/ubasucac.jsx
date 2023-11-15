@@ -142,7 +142,7 @@ const Ubasucac = () => {
                 <img src="/ubasucac/Lineadetiempo.svg" alt="Imagen 1" />
                 <img
                   id="indicadorTiempo"
-                  src="/ubasucac/indicadordetiempo.svg"
+                  src="/ubasucac/Indicadordetiempo.svg"
                   className="smooth-change"
                   alt="Indicador de Tiempo"
                   style={{
@@ -246,9 +246,9 @@ const Ubasucac = () => {
           >
           <div className="menusecond2" style={{ overflow: "hidden", maxWidth: "1100px",maxHeight:'500px', margin: "0 0",  boxSizing: "border-box" }}>
             <img
-              // src={`/ubasucac/imagen_${selectedImage}_${selectedImageInGroup}.png`}
+
               src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ marginBottom:'-10%',width: "100%", height: "auto", display: "block" ,position:'relative', zIndex: 4}}
               alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
               onClick={manejarClicEnImagen}
             />
@@ -258,7 +258,7 @@ const Ubasucac = () => {
               <div className="modal2" >
                 <img
                   src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
-                  style={{ width: "100%", height: "auto",maxHeight:'700px', display: "block" }}
+                  style={{ width: "100%", height: "auto",maxHeight:'700px', display: "block" ,position:'relative', zIndex: 5}}
                   alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
                 />
               </div>
@@ -267,27 +267,30 @@ const Ubasucac = () => {
 
           </div>
           <CloseButton
-            className="closethat"
-            style={{ top: "17%", right: "3%" }}
-            onClick={handleSecondContainerClose}
-          />
-          <ArrowLeft
-            className="closethat"
-            style={{ top: "50%", left: "4%" }}
-            onClick={() => changeImageInGroup(selectedImageInGroup - 1)}
-          />
-          <ArrowRight
-            className="closethat"
-            style={{ top: "50%", right: "7%" }}
-            onClick={() => changeImageInGroup(selectedImageInGroup + 1)}
-          />
+  className="closethat"
+  style={{ top: "15%", right: "3%", zIndex: 3 }}
+  onClick={handleSecondContainerClose}
+/>
+
+<ArrowLeft
+  className="closethat"
+  style={{ top: "50%", left: "4%", zIndex: 3 }}
+  onClick={() => changeImageInGroup(selectedImageInGroup - 1)}
+/>
+
+<ArrowRight
+  className="closethat"
+  style={{ top: "50%", right: "7%", zIndex: 3 }}
+  onClick={() => changeImageInGroup(selectedImageInGroup + 1)}
+/>
+
 
           <img
             src="/ubasucac/Group 1.svg"
             style={{
               position: "absolute",
               zIndex: 2,
-              bottom: "15%",
+              bottom: "10%",
               left: "3%",
             }}
           />
@@ -296,6 +299,7 @@ const Ubasucac = () => {
             style={{
               position: "absolute",
               zIndex: 2,
+              bottom: "13%",
             }}>
             <Download className="downloadIcon" />
             <p className="textcontainer">Descarga la imagen acá</p>
