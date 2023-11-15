@@ -71,6 +71,11 @@ const MapeoColectivo = () => {
       left: "39%",
       width: 93,
     },
+    {
+      top: "68%",
+      left: "26%",
+      width: 168,
+    },
   ];
   useEffect(() => {
     const handleResize = () => {
