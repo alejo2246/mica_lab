@@ -271,7 +271,7 @@ const Ubasucac = () => {
                     style={{ width: "100%", padding: "0px", paddingTop: "70%" }}
                   >
                     <Image
-                      src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
+                      src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.webp`}
                       alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
                       onLoad={(e) => {
                         setImageDimensions({
