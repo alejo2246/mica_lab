@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -64,6 +65,28 @@ const About = () => {
                   Baja, por la participación en este proceso.
                 </p>
               </div>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+            >
+              <Image
+                src="/3 LOGO LINEA. - BLANCO.png"
+                alt="logo alcaldia"
+                width={200}
+                height={200}
+              />
+              <Image
+                src="/logo Alcaldia distrito bogota.png"
+                alt="logo alcaldia"
+                width={200}
+                height={200}
+              />
             </div>
             <div className="about-image-container">
               <img

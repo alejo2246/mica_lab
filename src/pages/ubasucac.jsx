@@ -171,9 +171,8 @@ const Ubasucac = () => {
               </div>
               <div>
                 <img
-                className="espiral"
+                  className="espiral"
                   src="/ubasucac/espiral.svg"
-
                   alt="Imagen de fondo"
                 />
                 {circlesPosition.map((el, i) => (
@@ -264,7 +263,7 @@ const Ubasucac = () => {
                 >
                   <div
                     className="modal2"
-                    style={{ width: "100%", padding: "0px", paddingTop: "30%" }}
+                    style={{ width: "100%", padding: "0px", paddingTop: "50%" }}
                   >
                     <Image
                       src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
@@ -279,8 +278,8 @@ const Ubasucac = () => {
                         width: "100%",
                       }}
                       onClick={manejarClicEnImagen}
-                      width={2000}
-                      height={1500}
+                      width={1000}
+                      height={2000}
                     />
                   </div>
                 </div>
