@@ -591,6 +591,12 @@ a {
   max-Height: 500px;
   z-index: 3;
 }
+.espiral{
+  width: 100%;
+  max-Width: 724px;
+  height: auto;
+  margin-left: 10%;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media (max-width: 1340px) {
   .menu3respon{
@@ -607,6 +613,13 @@ a {
     overflow-x: hidden;
     position: fixed;
   }
+  .circleLineTime{
+    margin-left: 8%;
+    margin-right: -9%;
+  }
+  .espiral{
+    width: 75%;
+  }
   .menu3respon{
     bottom: -0%;
   }
@@ -617,7 +630,7 @@ a {
   }
 
   .hamburger-menu {
-    margin-right: 5%;
+    margin-right: 10vh;
     display: block; 
   }
 

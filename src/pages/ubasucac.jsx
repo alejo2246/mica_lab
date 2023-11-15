@@ -171,13 +171,9 @@ const Ubasucac = () => {
               </div>
               <div>
                 <img
+                className="espiral"
                   src="/ubasucac/espiral.svg"
-                  style={{
-                    width: "100%",
-                    maxWidth: "724px",
-                    height: "auto",
-                    marginLeft: "10%",
-                  }}
+
                   alt="Imagen de fondo"
                 />
                 {circlesPosition.map((el, i) => (
