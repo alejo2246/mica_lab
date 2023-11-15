@@ -56,7 +56,7 @@ const Quyca = () => {
       id: 9,
       src: "/quyca/9.png",
       audio: "/quyca/audio/9.mp3",
-      video: "/quyca/video/9.mp4",
+      video: "/quyca/video/26.mp4",
     },
     {
       id: 10,
@@ -88,12 +88,7 @@ const Quyca = () => {
       audio: "/quyca/audio/14.mp3",
       video: "/quyca/video/12.mp4",
     },
-    {
-      id: 15,
-      src: "/quyca/15.png",
-      audio: "/quyca/audio/14.mp3",
-      video: "/quyca/video/12.mp4",
-    },
+
     {
       id: 16,
       src: "/quyca/16.png",
