@@ -145,12 +145,19 @@ a {
   align-items: center;
 }
 
+.images-container{
+  position: relative;
+  max-width: 1220px;
+  max-height: 1510px;
+  margin: 0 auto; 
+  border: 1px solid black;
+}
+
 .responsive-image {
-  max-width: 100%;
-  max-height: 100%;
-  width: 1220px;
-  height: 1510px;
-  margin-bottom: 5%;
+  position: absolute;
+  max-width: 100%; 
+  width: auto;
+  height: auto; 
 }
 
 .chicubun-container {
