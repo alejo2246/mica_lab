@@ -71,7 +71,7 @@ const Quyca = () => {
     const imageContainer = document.getElementById("image-container");
 
     images.forEach((imagen) => {
-      const image = document.createElement("img");
+      const image = new Image();
       image.src = imagen.src;
       image.alt = `Imagen ${imagen.id}`;
       image.className = "responsive-image imageInte " + `image1_${imagen.id}`;

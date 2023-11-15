@@ -211,7 +211,7 @@ const Ubasucac = () => {
           }}
         >
           <img
-            src="/ubasucac/union3.svg"
+            src="/ubasucac/Union3.svg"
             style={{
               position: "absolute",
               top: '0.3%',
@@ -222,7 +222,7 @@ const Ubasucac = () => {
             }}
           />
           <img
-            src="/ubasucac/vector.svg"
+            src="/ubasucac/Vector.svg"
             style={{
               position: "absolute",
               top: "-0.2%",
