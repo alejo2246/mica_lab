@@ -592,7 +592,11 @@ a {
   z-index: 3;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
+@media (max-width: 1340px) {
+  .menu3respon{
+    width: 90%;
+  }
+}
 @media (max-width: 450px) {
   .menu1bolt {
     transform: rotate(90deg);
@@ -614,11 +618,11 @@ a {
 
   .hamburger-menu {
     margin-right: 5%;
-    display: block; /* Show the hamburger menu button */
+    display: block; 
   }
 
   .navbar-right {
-    display: none; /* Hide the regular navbar items */
+    display: none; 
   }
 
   .imageContainer {
