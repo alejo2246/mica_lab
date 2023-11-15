@@ -8,12 +8,12 @@ const Hizqa = () => {
     if (!hasMounted.current) {
       const imageContainer = document.getElementById("image-container");
 
-      for (let i = 1; i <= 16; i++) {
+      for (let i = 1; i <= 21; i++) {
         const image = document.createElement("img");
         image.className = "imageInte";
         image.classList.add("grayFilter");
-        image.classList.add(`image${i}`);
-        image.src = `./interaccion_BN/imagen${i}.png`;
+        image.classList.add(`imageH${i}`);
+        image.src = `./INTERACCION HIZQA/${i}.png`;
         imageContainer.appendChild(image);
 
         image.addEventListener("mouseenter", () => {
@@ -25,11 +25,23 @@ const Hizqa = () => {
           audioRef.current.pause();
         });
 
-        image.addEventListener("click", () => {
+        image.addEventListener("click", async () => {
           image.classList.remove("grayFilter");
           audioRef.current.pause();
-          audioRef.current.src = `./interaccion_BN/audio${i}.mp3`;
+          const audioSrc = `./INTERACCION HIZQA/audio${i}.mp3`;
+
+          // Attempt to fetch the audio file
+          const response = await fetch(audioSrc);
+
+          if (!response.ok) {
+            return; // Stop execution if the file is not found
+          }
+
+          // Set the src
+          audioRef.current.src = audioSrc;
           audioRef.current.volume = 0.1;
+
+          // Play the audio
           audioRef.current.play();
         });
       }
@@ -40,29 +52,24 @@ const Hizqa = () => {
     <div className="menu1bolt">
       <Navbar />
       <div className="menuprueba">
-      <div className="chicubun-container">
-        <h1 className="chicubun-title">HIZQA SAASBISA</h1>
-        <h2 className="subtie">[Medicina ancestral]</h2>
-        <h2 className="chicubun-subtitle">
-          Para mejorar esta experiencia, usa tus audífonos y da click en las
-          diferentes imágenes
-        </h2>
+        <div className="chicubun-container">
+          <h1 className="chicubun-title">HIZQA SAASBISA</h1>
+          <h2 className="subtie">[Medicina ancestral]</h2>
+          <h2 className="chicubun-subtitle">
+            Para mejorar esta experiencia, usa tus audífonos y da click en las
+            diferentes imágenes
+          </h2>
+        </div>
+        <div className="imageContainerHizqa" id="image-container">
+          <img
+            src="./INTERACCION HIZQA/lineas.jpeg"
+            alt="Your Image"
+            className=""
+            style={{ mixBlendMode: "multiply", height: "100%", width: "100%" }}
+          />
+        </div>
+        <audio ref={audioRef} src="" />
       </div>
-      <div className="imageContainer" id="image-container">
-        <img
-          src="./interaccion_BN/MAPEO COLECTIVO.PNG"
-          alt="Your Image"
-          className="imageInte grayFilter imageMapeo"
-        />
-        <img
-          src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.PNG"
-          alt="Your Image"
-          className=""
-          style={{ mixBlendMode: "multiply" }}
-        />
-      </div>
-      <audio ref={audioRef} src="" />
-    </div>
     </div>
   );
 };
