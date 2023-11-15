@@ -2,8 +2,10 @@
 
 .imageContainer {
   position: relative;
-  width: 1085px;
-  height: 878px;
+  max-width: 1085px;
+  max-height: 878px;
+  width: 95%;
+  height: 100%;
   margin: auto;
 }
 
@@ -13,6 +15,7 @@
   top: 0;
   left: 0;
   mix-blend-mode: multiply;
+  height: auto;
 }
 .showFirst {
   z-index: 99;
@@ -26,69 +29,89 @@
 }
 
 .image1 {
-  left: 487px;
+  left: 44.884793%;
+  width: 22.5806%;
 }
 
 .image2 {
-  top: 28px;
-  left: 759px;
+  top: 3.1963%;
+  left: 69.9539%;
+  width: 7.8341%;
 }
 .image3 {
-  top: 162px;
-  left: 677px;
+  top: 18.4932%;
+  left: 62.3963%;
+  width: 20%;
 }
 .image4 {
-  top: 61px;
-  left: 864px;
+  top: 6.9635%;
+  left: 79.6313%;
+  width: 20%;
 }
 .image5 {
-  top: 324px;
-  left: 952px;
+  top: 36.9863%;
+  left: 87.7419%;
+  width: 12.2581%;
 }
 
 .image6 {
-  top: 384px;
-  left: 663px;
+  top: 43.8356%;
+  left: 61.106%;
+  width: 10.0461%;
 }
 .image7 {
-  top: 413px;
-  left: 782px;
+  top: 47.1461%;
+  left: 72.0737%;
+  width: 17.8802%;
 }
 .image8 {
-  top: 505px;
-  left: 276px;
+  top: 57.6484%;
+  left: 25.4378%;
+  width: 42.3041%;
 }
 .image9 {
-  top: 386px;
-  left: 179px;
+  top: 44.0639%;
+  left: 16.4977%;
+  width: 28.7558%;
 }
 
 .image10 {
-  top: 74px;
-  left: 108px;
+  top: 8.4475%;
+  left: 9.9539%;
+  width: 32.4424%;
+}
+
+.image11 {
+  width: 21.56682%;
 }
 .image12 {
-  top: 350px;
+  top: 39.9543%;
+  width: 11.9816%;
 }
 .image13 {
-  top: 598px;
-  left: 51px;
+  top: 68.2648%;
+  left: 4.7005%;
+  width: 14.5622%;
 }
 .image14 {
-  top: 724px;
-  left: 209px;
+  top: 82.6484%;
+  left: 19.2627%;
+  width: 18.5253%;
 }
 .image15 {
-  top: 790px;
-  left: 453px;
+  top: 90.183%;
+  left: 41.7512%;
+  width: 7.0046%;
 }
 
 .image16 {
-  top: 774px;
-  left: 573px;
+  top: 88.356%;
+  left: 52.811%;
+  width: 23.134%;
 }
 
 .imageMapeo {
-  top: 233px;
-  left: 410px;
+  top: 26.598%;
+  left: 37.788%;
+  width: 29.954%;
 }

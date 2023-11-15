@@ -82,7 +82,7 @@ const Chicubun = () => {
             src="./interaccion_BN/ACTIVIDAD COLLAGE LINEAS.png"
             alt="Your Image"
             className="image_button"
-            style={{ mixBlendMode: "multiply" }}
+            style={{ mixBlendMode: "multiply", height: "100%", width: "100%" }}
           />
         </div>
         <audio ref={audioRef} src="" />
