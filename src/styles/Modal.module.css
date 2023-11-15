@@ -25,3 +25,13 @@
   margin: 20px;
   position: relative;
 }
+
+.closeButtonMod {
+  position: absolute;
+  right: 15px;
+  z-index: 99;
+  font-size: 80px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

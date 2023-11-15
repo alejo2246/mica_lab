@@ -6,7 +6,7 @@ const Modal2 = ({ isOpen, onClose, children }) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modal2} id="containerMapeoColectivo">
-        <button className={styles.closeButton} onClick={onClose}>
+        <button className={styles.closeButtonMod} onClick={onClose}>
           &times;
         </button>
         {children}
