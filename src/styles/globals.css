@@ -581,6 +581,16 @@ a {
 .submenu a:hover {
   color: red;
 }
+
+.menu3respon{
+  position: absolute;
+  bottom: 28%;
+  left: 4%;
+  width: 98%;
+  height: 100%;
+  max-Height: 500px;
+  z-index: 3;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 @media (max-width: 450px) {
@@ -592,6 +602,14 @@ a {
     height: 115vw;
     overflow-x: hidden;
     position: fixed;
+  }
+  .menu3respon{
+    bottom: -0%;
+  }
+  .menusecond2{
+    width: 90%;
+    height: 60%;
+    margin-top: 10%;
   }
 
   .hamburger-menu {

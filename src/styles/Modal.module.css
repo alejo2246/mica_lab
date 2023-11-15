@@ -25,3 +25,13 @@
   margin: 20px;
   position: relative;
 }
+
+@media (max-width: 450px) {
+  .modalOverlay {
+    width: 250vw;
+    scale: 0.9;
+    height: 100vh;
+    left: -8%;
+  }
+
+}

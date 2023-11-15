@@ -234,15 +234,8 @@ const Ubasucac = () => {
           />
 
           <div
-            style={{
-              position: "absolute",
-              bottom: "28%",
-              left: "4%",
-              width: "98%",
-              height: "100%",
-              maxHeight: "500px",
-              zIndex: 3,
-            }}
+          className="menu3respon"
+
           >
           <div className="menusecond2" style={{ overflow: "hidden", maxWidth: "1100px",maxHeight:'500px', margin: "0 0",  boxSizing: "border-box" }}>
             <img
