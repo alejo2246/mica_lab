@@ -268,28 +268,23 @@ const Ubasucac = () => {
                 >
                   <div
                     className="modal2"
-                    style={{ width: "100%", padding: "0px", paddingTop: "70%" }}
+                    style={{ width: "100%", padding: "0px", paddingTop: "30%" }}
                   >
                     <Image
-                      src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.webp`}
+                      src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
                       alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
-                      onLoad={(e) => {
-                        setImageDimensions({
-                          width: e.target.width,
-                          height: e.target.height,
-                        });
-                      }}
+                      // onLoad={(e) => {
+                      //   setImageDimensions({
+                      //     width: e.target.width,
+                      //     height: e.target.height,
+                      //   });
+                      // }}
                       style={{
-                        marginBottom: "-15%",
                         width: "100%",
-                        height: "auto",
-                        display: "block",
-                        position: "relative",
-                        zIndex: 4,
                       }}
                       onClick={manejarClicEnImagen}
-                      width={imageDimensions.width}
-                      height={imageDimensions.height}
+                      width={2000}
+                      height={1500}
                     />
                   </div>
                 </div>
