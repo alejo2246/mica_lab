@@ -251,6 +251,7 @@ const Ubasucac = () => {
                     display: "block",
                     position: "relative",
                     zIndex: 4,
+                    marginTop:'5%'
                   }}
                   alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
                   onClick={manejarClicEnImagen}
