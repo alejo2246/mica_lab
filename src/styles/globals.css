@@ -552,36 +552,50 @@ a {
 }
 
 .modal {
-  background-color: #f6f1eb;
+  background: #E5DFD8;
   padding: 20px;
   border-radius: 8px;
   flex-direction: column;
   align-items: center;
   width: 600px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ajusta según tus preferencias */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  font-family: prive;
 }
 
 .submenu {
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: center;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.submenu a {
+.navbar-link{
   display: block;
-  padding: 10px;
   text-decoration: none;
-  color: #333;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0px;
+}
+.navbarlink3{
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  padding: 10px;
+}
+.navbarlink2 {
+  display: block;
+  text-decoration: none;
   font-size: 16px;
-  margin-bottom: 8px;
+  line-height: 40px;
 }
 
-.submenu a:hover {
+.highlight-fuechy,
+.navbarlink2:hover {
   color: red;
 }
-
 .menu3respon {
   position: absolute;
   bottom: 28%;
