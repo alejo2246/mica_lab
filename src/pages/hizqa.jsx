@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import React, { useEffect } from "react";
-
+import Layout from "@/components/Layout";
 const Hizqa = () => {
   const audioRef = React.useRef(null);
   const hasMounted = React.useRef(false);
@@ -49,6 +49,7 @@ const Hizqa = () => {
     }
   }, null);
   return (
+    <Layout>
     <div className="menu1bolt">
       <Navbar />
       <div className="menuprueba">
@@ -71,6 +72,7 @@ const Hizqa = () => {
         <audio ref={audioRef} src="" />
       </div>
     </div>
+    </Layout>
   );
 };
 

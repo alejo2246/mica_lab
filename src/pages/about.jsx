@@ -2,9 +2,10 @@ import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-
+import Layout from "@/components/Layout";
 const About = () => {
   return (
+    <Layout>
     <div className="menu1bolt">
       <Navbar />
       <div className="about-content-container">
@@ -99,6 +100,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

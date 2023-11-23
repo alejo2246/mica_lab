@@ -2,7 +2,7 @@ import Modal from "@/components/Modal2";
 import Navbar from "@/components/Navbar/Navbar";
 import MapeoColectivo from "@/components/chicubun/MapeoColectivo";
 import Image from "next/image";
-
+import Layout from "@/components/Layout";
 import React, { useRef, useEffect, useState } from "react";
 
 const Chicubun = () => {
@@ -66,6 +66,7 @@ const Chicubun = () => {
   }, null);
 
   return (
+    <Layout>
     <div className="menu1bolt">
       <Navbar />
       <div className="menuprueba">
@@ -91,6 +92,7 @@ const Chicubun = () => {
         </Modal>
       </div>
     </div>
+    </Layout>
   );
 };
 

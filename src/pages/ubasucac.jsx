@@ -7,7 +7,7 @@ import Download from "public/ubasucac/download.svg";
 import CloseButton from "public/ubasucac/close.svg";
 import Modal from "@/components/Modal";
 import Image from "next/image";
-
+import Layout from "@/components/Layout";
 const Ubasucac = () => {
   const downloadImage = () => {
     const imageSrc = `/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`;
@@ -115,6 +115,7 @@ const Ubasucac = () => {
   };
 
   return (
+    <Layout>
     <>
       <div className="menu1bolt">
         <div>
@@ -243,15 +244,7 @@ const Ubasucac = () => {
               >
                 <img
                   src={`/ubasucac/${selectedImage}/${selectedImageInGroup}.jpg`}
-                  style={{
-                    marginBottom: "-15%",
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    position: "relative",
-                    zIndex: 4,
-                    marginTop:'5%'
-                  }}
+                  className="imageclas"
                   alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
                   onClick={manejarClicEnImagen}
                 />
@@ -335,6 +328,7 @@ const Ubasucac = () => {
         </Modal>
       </div>
     </>
+        </Layout>
   );
 };
 

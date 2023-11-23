@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar/Navbar";
-
+import Layout from "@/components/Layout";
 const Quyca = () => {
   const audioRef = useRef(null);
   const [images] = useState([
@@ -132,6 +132,8 @@ const Quyca = () => {
       video: "/quyca/video/19.mp4",
     },
   ]);
+  const vectorZIndex = [5, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                        5, 1, 5, 5, 5, 3, 5, 5, 1, 5, 2];
 
   const [videoModalAbierto, setVideoModalAbierto] = useState(false);
   const [videoSeleccionado, setVideoSeleccionado] = useState("");
@@ -185,7 +187,8 @@ const Quyca = () => {
       image.src = imagen.src;
       image.alt = `Imagen ${imagen.id}`;
       image.className = "responsive-image imageInte " + `image1_${imagen.id}`;
-
+      image.style.zIndex = vectorZIndex[imagen.id];
+      image.style.position = "absolute";
       image.addEventListener("click", () => {
         reproducirContenido(imagen.id);
       });
@@ -195,6 +198,7 @@ const Quyca = () => {
   }, [images]);
 
   return (
+    <Layout>
     <div className="menu1bolt">
       <Navbar />
       <div className="content-container">
@@ -214,6 +218,7 @@ const Quyca = () => {
       )}
       <audio ref={audioRef} src="" />
     </div>
+    </Layout>
   );
 };
 

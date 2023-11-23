@@ -4,7 +4,7 @@ import ArrowLeft from "public/objects/arrow_left.svg";
 import ArrowRight from "public/objects/arrow_right.svg";
 import Link from "next/link";
 import GifContext from "@/context/GifContext";
-
+import Layout from "@/components/Layout";
 const HomePage = () => {
   const [showGif, setShowGif] = useState(true);
   const { gifUrl } = useContext(GifContext);
@@ -18,6 +18,7 @@ const HomePage = () => {
   }, []);
 
   return (
+    <Layout>
     <div className="menu1bolt">
       <div
         style={{
@@ -172,6 +173,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

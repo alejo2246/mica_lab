@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
-
+import Layout from "@/components/Layout";
 const Credits = () => {
   return (
+    <Layout>
     <div className="menu1bolt">
       <Navbar />
       <style jsx>{``}</style>
@@ -53,6 +54,7 @@ const Credits = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
