@@ -25,7 +25,7 @@ const Navbar = () => {
       setShowMenu(false);
     }
   };
-  
+
   return (
     <nav>
       <div className="navbar-container">
@@ -136,8 +136,9 @@ const Navbar = () => {
           <div className={`bar ${showMenu ? "change" : ""}`} />
         </div>
         {showMenu && (
-          <div className="modal-container"
-          onClick={(e) => handleOutsideClick(e)}
+          <div
+            className="modal-container"
+            onClick={(e) => handleOutsideClick(e)}
           >
             <div className="modal">
               <div className="submenu">
@@ -152,45 +153,47 @@ const Navbar = () => {
                   FUECHY
                 </Link>
                 {selectedLink === "FUECHY" && (
-                <>
-                  <Link
-                    href="/ubasucac"
-                    className={`navbarlink2 ${
-                      selectedLink === "UBASUCAC" ? "selected highlight-fuechy" : ""
-                    }`}
-                    onClick={() => handleLinkClick("UBASUCAC")}
-                  >
-                    UBASUCAC AGUENÉ
-                  </Link>
-                  <Link
-                    href="/chicubun"
-                    className={`navbarlink2 ${
-                      selectedLink === "CHICUBUN" ? "selected" : ""
-                    }`}
-                    onClick={() => handleLinkClick("CHICUBUN")}
-                  >
-                    CHICUBUN
-                  </Link>
-                  <Link
-                    href="/quyca"
-                    className={`navbarlink2 ${
-                      selectedLink === "QUYCA" ? "selected" : ""
-                    }`}
-                    onClick={() => handleLinkClick("QUYCA")}
-                  >
-                    QUYCA
-                  </Link>
-                  <Link
-                    href="/hizqa"
-                    className={`navbarlink2 ${
-                      selectedLink === "HIZQA" ? "selected" : ""
-                    }`}
-                    onClick={() => handleLinkClick("HIZQA")}
-                  >
-                    HIZQA SAASBISA
-                  </Link>
-                </>
-              )}
+                  <>
+                    <Link
+                      href="/ubasucac"
+                      className={`navbarlink2 ${
+                        selectedLink === "UBASUCAC"
+                          ? "selected highlight-fuechy"
+                          : ""
+                      }`}
+                      onClick={() => handleLinkClick("UBASUCAC")}
+                    >
+                      UBASUCAC AGUENÉ
+                    </Link>
+                    <Link
+                      href="/chicubun"
+                      className={`navbarlink2 ${
+                        selectedLink === "CHICUBUN" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("CHICUBUN")}
+                    >
+                      CHICUBUN
+                    </Link>
+                    <Link
+                      href="/quyca"
+                      className={`navbarlink2 ${
+                        selectedLink === "QUYCA" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("QUYCA")}
+                    >
+                      QUYCA
+                    </Link>
+                    <Link
+                      href="/hizqa"
+                      className={`navbarlink2 ${
+                        selectedLink === "HIZQA" ? "selected" : ""
+                      }`}
+                      onClick={() => handleLinkClick("HIZQA")}
+                    >
+                      HIZQA SAASBISA
+                    </Link>
+                  </>
+                )}
                 <Link
                   href="/about"
                   className={`navbarlink3 ${

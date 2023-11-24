@@ -8,7 +8,8 @@ const Hizqa = () => {
     if (!hasMounted.current) {
       const imageContainer = document.getElementById("image-container");
 
-      for (let i = 1; i <= 21; i++) {
+      for (let i = 1; i <= 22; i++) {
+        if (i === 14) continue;
         const image = document.createElement("img");
         image.className = "imageInte";
         image.classList.add("grayFilter");
@@ -50,28 +51,32 @@ const Hizqa = () => {
   }, null);
   return (
     <Layout>
-    <div className="menu1bolt">
-      <Navbar />
-      <div className="menuprueba">
-        <div className="chicubun-container">
-          <h1 className="chicubun-title">HIZQA SAASBISA</h1>
-          <h2 className="subtie">[Medicina ancestral]</h2>
-          <h2 className="chicubun-subtitle">
-            Para mejorar esta experiencia, usa tus audífonos y da click en las
-            diferentes imágenes
-          </h2>
+      <div className="menu1bolt">
+        <Navbar />
+        <div className="menuprueba">
+          <div className="chicubun-container">
+            <h1 className="chicubun-title">HIZQA SAASBISA</h1>
+            <h2 className="subtie">[Medicina ancestral]</h2>
+            <h2 className="chicubun-subtitle">
+              Para mejorar esta experiencia, usa tus audífonos y da click en las
+              diferentes imágenes
+            </h2>
+          </div>
+          <div className="imageContainerHizqa" id="image-container">
+            <img
+              src="./INTERACCION HIZQA/lineas.jpeg"
+              alt="Your Image"
+              className=""
+              style={{
+                mixBlendMode: "multiply",
+                height: "100%",
+                width: "100%",
+              }}
+            />
+          </div>
+          <audio ref={audioRef} src="" />
         </div>
-        <div className="imageContainerHizqa" id="image-container">
-          <img
-            src="./INTERACCION HIZQA/lineas.jpeg"
-            alt="Your Image"
-            className=""
-            style={{ mixBlendMode: "multiply", height: "100%", width: "100%" }}
-          />
-        </div>
-        <audio ref={audioRef} src="" />
       </div>
-    </div>
     </Layout>
   );
 };
