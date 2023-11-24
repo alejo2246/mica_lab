@@ -5,21 +5,34 @@ import { useState } from "react";
 import { cloneUniformsGroups } from "three";
 
 const Navbar = () => {
-  const [selectedLink, setSelectedLink] = useState(null);
+
   const [showMenu, setShowMenu] = useState(false);
+  const isLocalStorageAvailable = typeof localStorage !== "undefined";
+
+  // Obtener el estado inicial del localStorage o usar un valor por defecto
+  const initialSelectedLink = isLocalStorageAvailable
+    ? localStorage.getItem("selectedLink") || null
+    : null;
+
+  const [selectedLink, setSelectedLink] = useState(initialSelectedLink);
+
 
   const handleLinkClick = (link) => {
-    if (selectedLink === link) {
-      setSelectedLink(null);
-    } else {
-      setSelectedLink(link);
+    if (isLocalStorageAvailable) {
+      if (selectedLink === link) {
+        setSelectedLink(null);
+        localStorage.removeItem("selectedLink");
+      } else {
+        setSelectedLink(link);
+        localStorage.setItem("selectedLink", link);
+      }
     }
   };
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   };
-
+  
   const handleOutsideClick = (e) => {
     if (e.target.classList.contains("modal-container")) {
       setShowMenu(false);
