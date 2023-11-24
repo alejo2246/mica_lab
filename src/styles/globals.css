@@ -5,6 +5,7 @@
   --background-color: #f6f1eb;
   --foreground-color: #552c3c;
   --active-text-color: #ff0200;
+  --multiplier: 10vw;
   --dropdown-button-color: #e5dfd8;
 }
 
@@ -212,7 +213,29 @@ a {
   max-width: 925px;
   margin-bottom: 3%;
 }
+.image-indicator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: absolute;
+  width: 100%; 
+  left: 0;
+  top: 110%;
+  margin-left: -5%;
+}
 
+.image-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5); 
+  margin: 0 5px; 
+  transition: background-color 0.3s ease;
+}
+
+.image-indicator-dot.active {
+  background-color: red;
+}
 .chicubun-image-container {
   display: flex;
   justify-content: center;
@@ -657,6 +680,9 @@ a {
   }
   .espiral {
     width: 75%;
+  }
+  .image-indicator-container {
+  top: 65%;
   }
   .menu3respon {
     bottom: -5%;

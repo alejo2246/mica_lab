@@ -88,7 +88,7 @@ const Ubasucac = () => {
       3: 1,
       4: 4,
       5: 4,
-      6: 12,
+      6: 17,
     };
     return maxImagesPerDate[selectedDate] || 0;
   };
@@ -248,6 +248,14 @@ const Ubasucac = () => {
                   alt={`Imagen ${selectedImageInGroup} de ${selectedImage}`}
                   onClick={manejarClicEnImagen}
                 />
+                <div className="image-indicator-container">
+                  {[...Array(getMaxImagesInGroup(selectedImage))].map((_, index) => (
+                    <div
+                      key={`indicator-${index}`}
+                      className={`image-indicator-dot ${index === selectedImageInGroup - 1 ? 'active' : ''}`}
+                    ></div>
+                  ))}
+                </div>
               </div>
               {modalAbierto && (
                 <div

@@ -80,7 +80,7 @@ const Quyca = () => {
       id: 13,
       src: "/quyca/13.png",
       audio: "/quyca/audio/11.mp3",
-      video: "/quyca/video/12.mp4",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 14,
