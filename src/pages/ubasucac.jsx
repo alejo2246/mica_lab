@@ -63,22 +63,9 @@ const Ubasucac = () => {
 
   const changeImageInGroup = (newIndex) => {
     const maxImagesInGroup = getMaxImagesInGroup(selectedImage);
-
     if (newIndex >= 1 && newIndex <= maxImagesInGroup) {
       setSelectedImageInGroup(newIndex);
-    } else if (newIndex < 1) {
-      const previousDate = selectedImage - 1;
-      if (previousDate >= 1) {
-        setSelectedImage(previousDate);
-        setSelectedImageInGroup(getMaxImagesInGroup(previousDate));
-      }
-    } else {
-      const nextDate = selectedImage + 1;
-      if (nextDate <= fechas.length) {
-        setSelectedImage(nextDate);
-        setSelectedImageInGroup(1);
-      }
-    }
+    } 
   };
 
   const getMaxImagesInGroup = (selectedDate) => {
