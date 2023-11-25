@@ -3,8 +3,10 @@
   max-width: 1232px;
   max-height: 1080px;
   width: 100%;
-  height: 1080px;
+  /* height: 1080px; */
+  aspect-ratio: 1;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .imageH1 {
@@ -62,9 +64,9 @@
 }
 
 .imageH11 {
-  top: 16.241%;
+  top: 15.241%;
   left: 37.587%;
-  width: 32.435%;
+  width: 29.5%;
 }
 .imageH12 {
   top: 38.148%;
@@ -82,7 +84,7 @@
   width: 8.065%;
 }
 .imageH15 {
-  top: 84.537%;
+  top: 83.537%;
   left: 54.293%;
   width: 22.342%;
 }
@@ -97,8 +99,8 @@
   width: 28.96%;
 }
 .imageH18 {
-  top: 80.522%;
-  left: 24.625%;
+  top: 79.522%;
+  left: 22.125%;
   width: 19.528%;
 }
 .imageH19 {
@@ -116,4 +118,10 @@
   left: 25.398%;
   top: 66.667%;
   width: 9.298%;
+}
+
+.imageH22 {
+  left: 62.0342%;
+  top: 15.7407%;
+  width: 13.58%;
 }
