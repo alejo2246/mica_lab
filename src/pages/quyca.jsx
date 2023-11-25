@@ -61,8 +61,8 @@ const Quyca = () => {
     {
       id: 10,
       src: "/quyca/10.png",
-      audio: "/quyca/audio/9.mp3",
-      video: "/quyca/video/0.mp4",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 11,
@@ -132,8 +132,9 @@ const Quyca = () => {
       video: "/quyca/video/19.mp4",
     },
   ]);
-  const vectorZIndex = [5, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5,
-                        5, 1, 5, 5, 5, 3, 5, 5, 1, 5, 2];
+  const vectorZIndex = [
+    5, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 3, 5, 5, 1, 5, 2,
+  ];
 
   const [videoModalAbierto, setVideoModalAbierto] = useState(false);
   const [videoSeleccionado, setVideoSeleccionado] = useState("");
@@ -199,25 +200,25 @@ const Quyca = () => {
 
   return (
     <Layout>
-    <div className="menu1bolt">
-      <Navbar />
-      <div className="content-container">
-        <h1 className="title-text title-bold">QUYCA</h1>
-        <h2 className="subtie">[Territorio]</h2>
-      </div>
-      <div className="imagesContainer" id="image-container"></div>
-      {videoModalAbierto && (
-        <div className="modal-container" onClick={cerrarVideoModal}>
-          <div className="modal2">
-            <video width="100%" height="auto" controls autoPlay>
-              <source src={videoSeleccionado} type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
-          </div>
+      <div className="menu1bolt">
+        <Navbar />
+        <div className="content-container">
+          <h1 className="title-text title-bold">QUYCA</h1>
+          <h2 className="subtie">[Territorio]</h2>
         </div>
-      )}
-      <audio ref={audioRef} src="" />
-    </div>
+        <div className="imagesContainer" id="image-container"></div>
+        {videoModalAbierto && (
+          <div className="modal-container" onClick={cerrarVideoModal}>
+            <div className="modal2">
+              <video width="100%" height="auto" controls autoPlay>
+                <source src={videoSeleccionado} type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+          </div>
+        )}
+        <audio ref={audioRef} src="" />
+      </div>
     </Layout>
   );
 };
