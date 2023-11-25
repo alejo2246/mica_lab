@@ -25,8 +25,8 @@ const Quyca = () => {
     {
       id: 4,
       src: "/quyca/4.png",
-      audio: "/quyca/audio/.mp3",
-      video: "/quyca/video/25.mp4",
+      audio: "/quyca/audio/3.mp3",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 5,
