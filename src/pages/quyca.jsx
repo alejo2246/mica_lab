@@ -8,7 +8,7 @@ const Quyca = () => {
       id: 1,
       src: "/quyca/1.png",
       audio: "/quyca/audio/26.mp3",
-      video: "/quyca/video/1.mp4",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 2,
@@ -55,19 +55,19 @@ const Quyca = () => {
     {
       id: 9,
       src: "/quyca/9.png",
-      audio: "/quyca/audio/9.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/26.mp4",
     },
     {
       id: 10,
       src: "/quyca/10.png",
-      audio: "/quyca/audio/3.mp3",
+      audio: "/quyca/audio/9.mp3",
       video: "/quyca/video/.mp4",
     },
     {
       id: 11,
       src: "/quyca/11.png",
-      audio: "/quyca/audio/10.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/10.mp4",
     },
     {
@@ -85,7 +85,7 @@ const Quyca = () => {
     {
       id: 14,
       src: "/quyca/14.png",
-      audio: "/quyca/audio/14.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/12.mp4",
     },
 
@@ -99,36 +99,36 @@ const Quyca = () => {
       id: 17,
       src: "/quyca/17.png",
       audio: "/quyca/audio/17.mp3",
-      video: "/quyca/video/17.mp4",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 18,
       src: "/quyca/18.png",
-      audio: "/quyca/audio/18.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/15.mp4",
     },
     {
       id: 19,
       src: "/quyca/19.png",
-      audio: "/quyca/audio/19.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/16.mp4",
     },
     {
       id: 20,
       src: "/quyca/20.png",
-      audio: "/quyca/audio/17.mp3",
-      video: "/quyca/video/17.mp4",
+      audio: "/quyca/audio/10.mp3",
+      video: "/quyca/video/.mp4",
     },
     {
       id: 21,
       src: "/quyca/21.png",
-      audio: "/quyca/audio/18.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/11.mp4",
     },
     {
       id: 22,
       src: "/quyca/22.png",
-      audio: "/quyca/audio/19.mp3",
+      audio: "/quyca/audio/.mp3",
       video: "/quyca/video/19.mp4",
     },
   ]);
