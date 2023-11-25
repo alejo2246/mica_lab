@@ -665,6 +665,12 @@ a {
   height: auto;
   margin-left: 10%;
 }
+.menuprueba{
+  margin-bottom: 200px;
+}
+.pruebamenuqyuca{
+  margin-bottom: 1200px;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media (max-width: 1340px) {
   .menu3respon {
@@ -676,6 +682,9 @@ a {
     margin-left: 8%;
     margin-right: -8.5%;
   }
+  .pruebamenuqyuca{
+    margin-bottom: 1200px;
+  }
   .espiral {
     width: 75%;
   }
@@ -685,6 +694,12 @@ a {
   .menu3respon {
     bottom: -5%;
     left: 8%;
+  }
+  .menuprueba{
+    margin-bottom: 0px;
+  }
+  .pruebamenuqyuca{
+    margin-bottom: 800px;
   }
   .menusecond2 {
     width: 90%;
@@ -706,6 +721,7 @@ a {
     transform: scale(0.65);
     margin-left: -60px;
     margin-top: -10%;
+    margin-bottom: 400px;
   }
 
   /* .menu1bolt12 {

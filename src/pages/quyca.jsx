@@ -207,7 +207,7 @@ const Quyca = () => {
 
   return (
     <Layout>
-      <div className="menu1bolt">
+      <div className="menu1bolt  pruebamenuqyuca">
         <Navbar />
         <div className="content-container">
           <h1 className="title-text title-bold">QUYCA</h1>
