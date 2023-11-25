@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Layout from "@/components/Layout";
 const Quyca = () => {
   const audioRef = useRef(null);
+  const hasMounted = useRef(false);
   const [images] = useState([
     {
       id: 1,
@@ -181,22 +182,28 @@ const Quyca = () => {
   };
 
   useEffect(() => {
-    const imageContainer = document.getElementById("image-container");
+    if (!hasMounted.current) {
+      const imageContainer = document.getElementById("image-container");
 
-    images.forEach((imagen) => {
-      const image = new Image();
-      image.src = imagen.src;
-      image.alt = `Imagen ${imagen.id}`;
-      image.className = "responsive-image imageInte " + `image1_${imagen.id}`;
-      image.style.zIndex = vectorZIndex[imagen.id];
-      image.style.position = "absolute";
-      image.addEventListener("click", () => {
-        reproducirContenido(imagen.id);
+      images.forEach((imagen, i) => {
+        const image = new Image();
+        image.src = imagen.src;
+        image.alt = `Imagen ${imagen.id}`;
+
+        image.className = `responsive-image ${
+          i >= 1 && i < 8 ? "imageInte" : "imageInte2"
+        } image1_${imagen.id}`;
+        image.style.zIndex = vectorZIndex[imagen.id];
+        image.style.position = "absolute";
+        image.addEventListener("click", () => {
+          reproducirContenido(imagen.id);
+        });
+
+        imageContainer.appendChild(image);
       });
-
-      imageContainer.appendChild(image);
-    });
-  }, [images]);
+      hasMounted.current = true;
+    }
+  }, null);
 
   return (
     <Layout>

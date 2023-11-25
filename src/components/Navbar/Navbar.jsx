@@ -5,7 +5,6 @@ import { useState } from "react";
 import { cloneUniformsGroups } from "three";
 
 const Navbar = () => {
-
   const [showMenu, setShowMenu] = useState(false);
   const isLocalStorageAvailable = typeof localStorage !== "undefined";
 
@@ -15,7 +14,6 @@ const Navbar = () => {
     : null;
 
   const [selectedLink, setSelectedLink] = useState(initialSelectedLink);
-
 
   const handleLinkClick = (link) => {
     if (isLocalStorageAvailable) {
@@ -32,7 +30,7 @@ const Navbar = () => {
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   };
-  
+
   const handleOutsideClick = (e) => {
     if (e.target.classList.contains("modal-container")) {
       setShowMenu(false);
@@ -75,8 +73,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/ubasucac"
-                      className={`navbar-link ${
-                        selectedLink === "UBASUCAC" ? "selected" : ""
+                      className={`navbar-link${
+                        selectedLink === "UBASUCAC" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("UBASUCAC")}
                     >
@@ -86,8 +84,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/chicubun"
-                      className={`navbar-link ${
-                        selectedLink === "CHICUBUN" ? "selected" : ""
+                      className={`navbar-link${
+                        selectedLink === "CHICUBUN" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("CHICUBUN")}
                     >
@@ -97,8 +95,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/quyca"
-                      className={`navbar-link ${
-                        selectedLink === "QUYCA" ? "selected" : ""
+                      className={`navbar-link${
+                        selectedLink === "QUYCA" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("QUYCA")}
                     >
@@ -108,8 +106,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/hizqa"
-                      className={`navbar-link ${
-                        selectedLink === "HIZQA" ? "selected" : ""
+                      className={`navbar-link${
+                        selectedLink === "HIZQA" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("HIZQA")}
                     >
@@ -122,8 +120,8 @@ const Navbar = () => {
             <span className="navbar-item">
               <Link
                 href="/about"
-                className={`navbar-link ${
-                  selectedLink === "SOBRE LA INICIATIVA" ? "selected" : ""
+                className={`navbar-link${
+                  selectedLink === "SOBRE LA INICIATIVA" ? " selected" : ""
                 }`}
                 onClick={() => handleLinkClick("SOBRE LA INICIATIVA")}
               >
@@ -133,8 +131,8 @@ const Navbar = () => {
             <span className="navbar-item">
               <Link
                 href="/credits"
-                className={`navbar-link ${
-                  selectedLink === "CRÉDITOS" ? "selected" : ""
+                className={`navbar-link${
+                  selectedLink === "CRÉDITOS" ? " selected" : ""
                 }`}
                 onClick={() => handleLinkClick("CRÉDITOS")}
               >
@@ -159,7 +157,7 @@ const Navbar = () => {
                 <Link
                   href="#"
                   className={`navbarlink3 ${
-                    selectedLink === "FUECHY" ? "selected" : ""
+                    selectedLink === "FUECHY" ? " selected" : ""
                   }`}
                   onClick={() => handleLinkClick("FUECHY")}
                 >
@@ -181,7 +179,7 @@ const Navbar = () => {
                     <Link
                       href="/chicubun"
                       className={`navbarlink2 ${
-                        selectedLink === "CHICUBUN" ? "selected" : ""
+                        selectedLink === "CHICUBUN" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("CHICUBUN")}
                     >
@@ -190,7 +188,7 @@ const Navbar = () => {
                     <Link
                       href="/quyca"
                       className={`navbarlink2 ${
-                        selectedLink === "QUYCA" ? "selected" : ""
+                        selectedLink === "QUYCA" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("QUYCA")}
                     >
@@ -199,7 +197,7 @@ const Navbar = () => {
                     <Link
                       href="/hizqa"
                       className={`navbarlink2 ${
-                        selectedLink === "HIZQA" ? "selected" : ""
+                        selectedLink === "HIZQA" ? " selected" : ""
                       }`}
                       onClick={() => handleLinkClick("HIZQA")}
                     >
@@ -210,7 +208,7 @@ const Navbar = () => {
                 <Link
                   href="/about"
                   className={`navbarlink3 ${
-                    selectedLink === "SOBRE EL PROYECTO" ? "selected" : ""
+                    selectedLink === "SOBRE EL PROYECTO" ? " selected" : ""
                   }`}
                   onClick={() => handleLinkClick("SOBRE EL PROYECTO")}
                 >
@@ -219,7 +217,7 @@ const Navbar = () => {
                 <Link
                   href="/credits"
                   className={`navbarlink3 ${
-                    selectedLink === "CRÉDITOS" ? "selected" : ""
+                    selectedLink === "CRÉDITOS" ? " selected" : ""
                   }`}
                   onClick={() => handleLinkClick("CRÉDITOS")}
                 >
